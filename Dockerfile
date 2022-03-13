@@ -24,7 +24,7 @@ ARG SITE_DESCRIPTION
 
 ENV API_URI =${API_URI:-"https://mhbvufznnx.us-east-1.awsapprunner.com/graphql/"}
 ENV API_ORIGIN =${API_ORIGIN:-"mhbvufznnx.us-east-1.awsapprunner.com"}
-ENV SITE_NAME =${API_URI:-"Feyti"}
+ENV SITE_NAME =${SITE_NAME:-"Feyti"}
 ENV SITE_DESCRIPTION =${SITE_DESCRIPTION:-"Phamacy based Online shop"}
 RUN UMI_ENV=${UMI_ENV} yarn build
 
@@ -38,5 +38,6 @@ WORKDIR /app
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 # copy build output to nginx serve folder
 COPY --from=builder /app/dist/ /usr/share/nginx/html/
-EXPOSE 80 , 3000
+EXPOSE 80
+EXPOSE 3000
 CMD ["nginx", "-g", "daemon off;"]
