@@ -28,6 +28,6 @@ jobs:
           aws-region: ${{ secrets.AWS_STATIC_HOST_REGION }}
       - name: Deploy
         run: |
-          BUCKET=${{ secrets.AWS_DASHBOARD_BUCKET_NAME }}
-          aws s3 sync build/dashboard s3://${BUCKET}/dashboard/static/
-          aws s3 cp build/dashboard/index.html s3://${BUCK}/dashboard/
+          BUCKET=${{ secrets.AWS_STOREFRONT_BUCKET_NAME }}
+          aws s3 sync dist/ s3://${BUCKET}/storfront/static/
+          aws s3 cp dist/index.html s3://${BUCKET}/storefront/
