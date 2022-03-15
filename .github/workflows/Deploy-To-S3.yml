@@ -1,4 +1,4 @@
-name: Deploy to cloud
+name: Deploy to Cloud
 on:
    push:
     branches: [ master ]
@@ -8,18 +8,18 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       API_URI: /graphql/
-      APP_MOUNT_URI: /dashboard/
-      STATIC_URL: /dashboard/static/
+      APP_MOUNT_URI: /store/
+      STATIC_URL: /storefront/static/
     steps:
       - uses: actions/checkout@v2
 
       - name: Package
         timeout-minutes: 15
         run: |
-          npm ci
+          yarn ci
       - name: Build
         run: |
-          npm run build
+          yarn run build
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
