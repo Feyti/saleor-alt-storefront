@@ -29,5 +29,5 @@ jobs:
       - name: Deploy
         run: |
           BUCKET=${{ secrets.AWS_STOREFRONT_BUCKET_NAME }}
-          aws s3 sync dist/ s3://${BUCKET}/storfront/static/
+          aws s3 sync dist/ s3://${BUCKET}/storefront/static/
           aws s3 cp dist/index.html s3://${BUCKET}/storefront/
