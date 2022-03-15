@@ -16,7 +16,7 @@ jobs:
       - name: Package
         timeout-minutes: 15
         run: |
-          yarn ci
+          yarn install
       - name: Build
         run: |
           yarn run build
