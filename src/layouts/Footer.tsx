@@ -8,7 +8,8 @@ const Footer: React.FC = () => {
     <Row justify="center">
       <Col>
         <Typography.Text className="text-center">
-          {intl.formatMessage({ id: "footer.createdby" })}
+          // {intl.formatMessage({ id: "footer.createdby" })}
+          "Feyit"
         </Typography.Text>
       </Col>
     </Row>
