@@ -7,3 +7,4 @@ package.json
 .umi-test
 **/types/*.ts
 src/globalTypes.ts
+**/*.log

@@ -2,7 +2,7 @@ module.exports = {
   client: {
     service: {
       name: "saleor",
-      url: "https://localhost:8000/graphql/",
+      url: "https://mhbvufznnx.us-east-1.awsapprunner.com/graphql/",
       skipSSLValidation: true,
     },
   },

@@ -91,7 +91,7 @@ export default defineConfig({
     : {
         "layout-header-background": "#fff",
         "layout-body-background": "#fff",
-        "layout-footer-background": "#eee",
+        "layout-footer-background": "#fff",
         "text-color-secondary": "#0009",
       },
   chainWebpack: (memo, {}) => {

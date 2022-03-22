@@ -164,7 +164,7 @@ interface AltConfig {
 }
 
 const altConfig: AltConfig = {
-  name: SITE_NAME,
+  name: "SITE_NAME",
   showSearch: true,
   allowAnonCheckout: true,
   showCookieNotice: true,
@@ -306,7 +306,7 @@ const altConfig: AltConfig = {
     {
       id: "khalibloo.payments.2checkout",
       config: {
-        merchantCode: TCO_MERCHANT_CODE,
+        merchantCode: "TCO_MERCHANT_CODE",
       },
       onPay: (
         {
