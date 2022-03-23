@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       API_URI: ${{ secrets.AWS_URL }}
-      API_ORIGIN: mhbvufznnx.us-east-1.awsapprunner.com
+      API_ORIGIN: https://mhbvufznnx.us-east-1.awsapprunner.com
       SITE_NAME: Feyit Drug Shop
       SITE_DESCRIPTION: Drug Shop for All
       # APP_MOUNT_URI: /store/
