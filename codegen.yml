@@ -1,0 +1,8 @@
+schema: https://mhbvufznnx.us-east-1.awsapprunner.com/graphql/
+documents: ./src/queries/*.ts
+generates:
+  ./src/globaltypes.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo

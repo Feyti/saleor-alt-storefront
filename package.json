@@ -77,6 +77,10 @@
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
+    "@graphql-codegen/introspection": "2.1.1",
+    "@graphql-codegen/typescript": "2.4.8",
+    "@graphql-codegen/typescript-operations": "2.3.5",
+    "@graphql-codegen/typescript-react-apollo": "3.2.11",
     "antd-dayjs-webpack-plugin": "^1.0.0",
     "apollo": "^2.30.3",
     "core-js": "^3.6.4",
