@@ -80,10 +80,9 @@ export default defineConfig({
     MEILISEARCH_URL: process.env.MEILISEARCH_URL,
     MEILISEARCH_KEY: process.env.MEILISEARCH_KEY,
     SENTRY_DSN: process.env.SENTRY_DSN,
-    SITE_NAME: process.env.SITE_NAME || "Alt Storefront",
+    SITE_NAME: process.env.SITE_NAME || "Feyti Store",
     SITE_DESCRIPTION:
-      process.env.SITE_DESCRIPTION ||
-      "An alternate storefront for the saleor ecommerce platform",
+      process.env.SITE_DESCRIPTION || "A multi-regional Drug Shop",
     TCO_MERCHANT_CODE: process.env.TCO_MERCHANT_CODE,
   },
   theme: useDark
@@ -92,7 +91,8 @@ export default defineConfig({
         "layout-header-background": "#fff",
         "layout-body-background": "#fff",
         "layout-footer-background": "#fff",
-        "text-color-secondary": "#0009",
+        "text-color-secondary": "#009154",
+        // #009154 0009
       },
   chainWebpack: (memo, {}) => {
     // memo.merge({
