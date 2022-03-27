@@ -415,9 +415,7 @@ export interface ProductsQuery {
 }
 
 export interface ProductsQueryVariables {
-  categoryID?: string | null;
   categoryList?: (string | null)[] | null;
-  collectionID?: string | null;
   collectionList?: (string | null)[] | null;
   search?: string | null;
   sortBy?: ProductOrder | null;
