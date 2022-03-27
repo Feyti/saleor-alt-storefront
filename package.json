@@ -19,7 +19,7 @@
     "build:prod": "cross-env UMI_ENV=prod umi build",
     "serve": "serve -s ./dist",
     "build-serve": "npm-run-all --serial build serve",
-    "codegen": "apollo client:codegen --target=typescript types --globalTypesFile=src/globalTypes.ts",
+    "codegen": "apollo client:codegen --target=typescript types --globalTypesFile=src/globalTypes.ts,schema.graphql",
     "codegen:watch": "npm run codegen -- --watch",
     "prettier": "prettier --write src/**/*.{js,jsx,tsx,ts,less,md,json}",
     "test": "umi-test",

@@ -17,6 +17,7 @@ import { Helmet } from "react-helmet";
 import RichTextContent from "@/components/RichTextContent";
 import AspectRatio from "@/components/AspectRatio";
 import VSpacing from "@/components/VSpacing";
+// @ts-ignore
 import { useIntl, useParams, useDispatch, connect, ConnectRC } from "umi";
 import {
   formatPrice,
@@ -106,6 +107,7 @@ const ProductDetailPage: ConnectRC<Props> = ({ loading }) => {
           const matchIndex = vAttrs.findIndex(a => a.id === attr.attribute.id);
           const entry = vAttrs[matchIndex];
           if (!entry) {
+            // noinspection TypeScriptValidateTypes
             vAttrs.push({
               id: attr.attribute.id,
               name: attr.attribute.name as string,
