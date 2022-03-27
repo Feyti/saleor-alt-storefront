@@ -21,9 +21,6 @@ export interface viewSelfQuery_me_metadata {
 
 export interface viewSelfQuery_me {
   __typename: "User";
-  /**
-   * The ID of the object.
-   */
   id: string;
   email: string;
   firstName: string;

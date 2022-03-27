@@ -1,8 +1,11 @@
-schema: https://mhbvufznnx.us-east-1.awsapprunner.com/graphql/
-documents: ./src/queries/*.ts
+overwrite: true
+schema: "https://mhbvufznnx.us-east-1.awsapprunner.com/graphql/"
+documents: "src/queries/*.tsx"
 generates:
-  ./src/globaltypes.ts:
+  generated/graphql.tsx:
+  target:
     plugins:
-      - typescript
-      - typescript-operations
-      - typescript-react-apollo
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+

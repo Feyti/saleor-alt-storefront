@@ -9,18 +9,12 @@
 
 export interface BasicCategoryDetails_translation {
   __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface BasicCategoryDetails {
   __typename: "Category";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;

@@ -39,9 +39,6 @@ export interface TokenVerifyMutation_tokenVerify_user_metadata {
 
 export interface TokenVerifyMutation_tokenVerify_user {
   __typename: "User";
-  /**
-   * The ID of the object.
-   */
   id: string;
   email: string;
   firstName: string;

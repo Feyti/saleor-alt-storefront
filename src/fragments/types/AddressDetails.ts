@@ -21,9 +21,6 @@ export interface AddressDetails_country {
 
 export interface AddressDetails {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;

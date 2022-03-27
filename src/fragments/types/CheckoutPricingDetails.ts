@@ -22,10 +22,16 @@ export interface CheckoutPricingDetails_shippingMethod_minimumOrderPrice {
 export interface CheckoutPricingDetails_shippingMethod {
   __typename: "ShippingMethod";
   /**
-   * The ID of the object.
+   * Unique ID of ShippingMethod available for Order.
    */
   id: string;
+  /**
+   * Shipping method name.
+   */
   name: string;
+  /**
+   * Minimal order price for this shipping method.
+   */
   minimumOrderPrice: CheckoutPricingDetails_shippingMethod_minimumOrderPrice | null;
 }
 
@@ -103,6 +109,9 @@ export interface CheckoutPricingDetails_discount {
 
 export interface CheckoutPricingDetails {
   __typename: "Checkout";
+  /**
+   * The shipping method related with checkout.
+   */
   shippingMethod: CheckoutPricingDetails_shippingMethod | null;
   /**
    * The price of the shipping, with all the taxes included.

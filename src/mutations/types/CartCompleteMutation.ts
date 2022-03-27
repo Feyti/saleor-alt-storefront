@@ -27,9 +27,6 @@ export interface CartCompleteMutation_checkoutComplete_checkoutErrors {
 
 export interface CartCompleteMutation_checkoutComplete_order {
   __typename: "Order";
-  /**
-   * The ID of the object.
-   */
   id: string;
   status: OrderStatus;
   /**

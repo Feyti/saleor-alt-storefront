@@ -39,9 +39,6 @@ export interface UserConfirmPasswordResetMutation_setPassword_user_metadata {
 
 export interface UserConfirmPasswordResetMutation_setPassword_user {
   __typename: "User";
-  /**
-   * The ID of the object.
-   */
   id: string;
   email: string;
   firstName: string;

@@ -11,72 +11,48 @@ import { LanguageCodeEnum } from "./../../globalTypes";
 
 export interface categorySubtreeQuery_category_translation {
   __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface categorySubtreeQuery_category_children_edges_node_translation {
   __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface categorySubtreeQuery_category_children_edges_node_children_edges_node_translation {
   __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface categorySubtreeQuery_category_children_edges_node_children_edges_node_children_edges_node_translation {
   __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface categorySubtreeQuery_category_children_edges_node_children_edges_node_children_edges_node_children_edges_node_translation {
   __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface categorySubtreeQuery_category_children_edges_node_children_edges_node_children_edges_node_children_edges_node_children_edges_node_translation {
   __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface categorySubtreeQuery_category_children_edges_node_children_edges_node_children_edges_node_children_edges_node_children_edges_node_children_edges_node_translation {
   __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface categorySubtreeQuery_category_children_edges_node_children_edges_node_children_edges_node_children_edges_node_children_edges_node_children_edges_node {
   __typename: "Category";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -102,9 +78,6 @@ export interface categorySubtreeQuery_category_children_edges_node_children_edge
 
 export interface categorySubtreeQuery_category_children_edges_node_children_edges_node_children_edges_node_children_edges_node_children_edges_node {
   __typename: "Category";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -134,9 +107,6 @@ export interface categorySubtreeQuery_category_children_edges_node_children_edge
 
 export interface categorySubtreeQuery_category_children_edges_node_children_edges_node_children_edges_node_children_edges_node {
   __typename: "Category";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -166,9 +136,6 @@ export interface categorySubtreeQuery_category_children_edges_node_children_edge
 
 export interface categorySubtreeQuery_category_children_edges_node_children_edges_node_children_edges_node {
   __typename: "Category";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -198,9 +165,6 @@ export interface categorySubtreeQuery_category_children_edges_node_children_edge
 
 export interface categorySubtreeQuery_category_children_edges_node_children_edges_node {
   __typename: "Category";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -230,9 +194,6 @@ export interface categorySubtreeQuery_category_children_edges_node_children {
 
 export interface categorySubtreeQuery_category_children_edges_node {
   __typename: "Category";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -262,9 +223,6 @@ export interface categorySubtreeQuery_category_children {
 
 export interface categorySubtreeQuery_category {
   __typename: "Category";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;

@@ -9,18 +9,12 @@
 
 export interface BasicCollectionDetails_translation {
   __typename: "CollectionTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface BasicCollectionDetails {
   __typename: "Collection";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;

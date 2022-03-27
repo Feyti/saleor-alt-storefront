@@ -51,9 +51,6 @@ export interface UserAddressDeleteMutation_accountAddressDelete_user_addresses_c
 
 export interface UserAddressDeleteMutation_accountAddressDelete_user_addresses {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;
@@ -81,9 +78,6 @@ export interface UserAddressDeleteMutation_accountAddressDelete_user_addresses {
 
 export interface UserAddressDeleteMutation_accountAddressDelete_user {
   __typename: "User";
-  /**
-   * The ID of the object.
-   */
   id: string;
   email: string;
   firstName: string;

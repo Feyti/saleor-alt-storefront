@@ -11,23 +11,23 @@ import { LanguageCodeEnum } from "./../../globalTypes";
 
 export interface pageQuery_page_translation {
   __typename: "PageTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  title: string;
-  contentJson: any;
+  title: string | null;
+  /**
+   * Translated description of the page (JSON).
+   */
+  contentJson: any | null;
   seoTitle: string | null;
   seoDescription: string | null;
 }
 
 export interface pageQuery_page {
   __typename: "Page";
-  /**
-   * The ID of the object.
-   */
   id: string;
   title: string;
+  /**
+   * Content of the page (JSON).
+   */
   contentJson: any;
   seoTitle: string | null;
   seoDescription: string | null;

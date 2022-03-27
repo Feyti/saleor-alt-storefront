@@ -33,9 +33,6 @@ export interface profileQuery_me_addresses_country {
 
 export interface profileQuery_me_addresses {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;
@@ -63,9 +60,6 @@ export interface profileQuery_me_addresses {
 
 export interface profileQuery_me {
   __typename: "User";
-  /**
-   * The ID of the object.
-   */
   id: string;
   email: string;
   firstName: string;

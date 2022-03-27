@@ -27,9 +27,6 @@ export interface CartPaymentCreateMutation_checkoutPaymentCreate_paymentErrors {
 
 export interface CartPaymentCreateMutation_checkoutPaymentCreate_payment {
   __typename: "Payment";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * Internal payment status.
@@ -52,10 +49,16 @@ export interface CartPaymentCreateMutation_checkoutPaymentCreate_checkout_shippi
 export interface CartPaymentCreateMutation_checkoutPaymentCreate_checkout_shippingMethod {
   __typename: "ShippingMethod";
   /**
-   * The ID of the object.
+   * Unique ID of ShippingMethod available for Order.
    */
   id: string;
+  /**
+   * Shipping method name.
+   */
   name: string;
+  /**
+   * Minimal order price for this shipping method.
+   */
   minimumOrderPrice: CartPaymentCreateMutation_checkoutPaymentCreate_checkout_shippingMethod_minimumOrderPrice | null;
 }
 
@@ -146,11 +149,17 @@ export interface CartPaymentCreateMutation_checkoutPaymentCreate_checkout_availa
 export interface CartPaymentCreateMutation_checkoutPaymentCreate_checkout_availableShippingMethods {
   __typename: "ShippingMethod";
   /**
-   * The ID of the object.
+   * Unique ID of ShippingMethod available for Order.
    */
   id: string;
+  /**
+   * Shipping method name.
+   */
   name: string;
-  price: CartPaymentCreateMutation_checkoutPaymentCreate_checkout_availableShippingMethods_price | null;
+  /**
+   * The price of selected shipping method.
+   */
+  price: CartPaymentCreateMutation_checkoutPaymentCreate_checkout_availableShippingMethods_price;
 }
 
 export interface CartPaymentCreateMutation_checkoutPaymentCreate_checkout_shippingAddress_country {
@@ -167,9 +176,6 @@ export interface CartPaymentCreateMutation_checkoutPaymentCreate_checkout_shippi
 
 export interface CartPaymentCreateMutation_checkoutPaymentCreate_checkout_shippingAddress {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;
@@ -209,9 +215,6 @@ export interface CartPaymentCreateMutation_checkoutPaymentCreate_checkout_billin
 
 export interface CartPaymentCreateMutation_checkoutPaymentCreate_checkout_billingAddress {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;
@@ -267,18 +270,12 @@ export interface CartPaymentCreateMutation_checkoutPaymentCreate_checkout_availa
 
 export interface CartPaymentCreateMutation_checkoutPaymentCreate_checkout_lines {
   __typename: "CheckoutLine";
-  /**
-   * The ID of the object.
-   */
   id: string;
   quantity: number;
 }
 
 export interface CartPaymentCreateMutation_checkoutPaymentCreate_checkout {
   __typename: "Checkout";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * The checkout's token.
@@ -287,7 +284,10 @@ export interface CartPaymentCreateMutation_checkoutPaymentCreate_checkout {
   /**
    * Email of a customer.
    */
-  email: string;
+  email: string | null;
+  /**
+   * The shipping method related with checkout.
+   */
   shippingMethod: CartPaymentCreateMutation_checkoutPaymentCreate_checkout_shippingMethod | null;
   /**
    * The price of the shipping, with all the taxes included.
@@ -304,7 +304,7 @@ export interface CartPaymentCreateMutation_checkoutPaymentCreate_checkout {
   discount: CartPaymentCreateMutation_checkoutPaymentCreate_checkout_discount | null;
   voucherCode: string | null;
   /**
-   * Shipping methods that can be used with this order.
+   * Shipping methods that can be used with this checkout.
    */
   availableShippingMethods: (CartPaymentCreateMutation_checkoutPaymentCreate_checkout_availableShippingMethods | null)[];
   shippingAddress: CartPaymentCreateMutation_checkoutPaymentCreate_checkout_shippingAddress | null;

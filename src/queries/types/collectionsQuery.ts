@@ -11,18 +11,12 @@ import { LanguageCodeEnum } from "./../../globalTypes";
 
 export interface collectionsQuery_collections_edges_node_translation {
   __typename: "CollectionTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface collectionsQuery_collections_edges_node {
   __typename: "Collection";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;

@@ -22,30 +22,27 @@ export interface ProductCard_thumbnail {
 export interface ProductCard_images {
   __typename: "ProductImage";
   /**
-   * The ID of the object.
+   * The ID of the image.
    */
   id: string;
   /**
    * The URL of the image.
    */
   url: string;
-  alt: string;
+  /**
+   * The alt text of the image.
+   */
+  alt: string | null;
 }
 
 export interface ProductCard_collections_translation {
   __typename: "CollectionTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface ProductCard_collections {
   __typename: "Collection";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -57,18 +54,12 @@ export interface ProductCard_collections {
 
 export interface ProductCard_category_translation {
   __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface ProductCard_category {
   __typename: "Category";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -229,18 +220,12 @@ export interface ProductCard_pricing {
 
 export interface ProductCard_translation {
   __typename: "ProductTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface ProductCard {
   __typename: "Product";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;

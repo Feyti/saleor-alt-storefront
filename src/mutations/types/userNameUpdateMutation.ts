@@ -51,9 +51,6 @@ export interface UserNameUpdateMutation_accountUpdate_user_addresses_country {
 
 export interface UserNameUpdateMutation_accountUpdate_user_addresses {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;
@@ -81,9 +78,6 @@ export interface UserNameUpdateMutation_accountUpdate_user_addresses {
 
 export interface UserNameUpdateMutation_accountUpdate_user {
   __typename: "User";
-  /**
-   * The ID of the object.
-   */
   id: string;
   email: string;
   firstName: string;

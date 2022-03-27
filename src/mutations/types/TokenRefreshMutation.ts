@@ -39,9 +39,6 @@ export interface TokenRefreshMutation_tokenRefresh_user_metadata {
 
 export interface TokenRefreshMutation_tokenRefresh_user {
   __typename: "User";
-  /**
-   * The ID of the object.
-   */
   id: string;
   email: string;
   firstName: string;

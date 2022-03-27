@@ -51,9 +51,6 @@ export interface UserAddressCreateMutation_accountAddressCreate_user_addresses_c
 
 export interface UserAddressCreateMutation_accountAddressCreate_user_addresses {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;
@@ -81,9 +78,6 @@ export interface UserAddressCreateMutation_accountAddressCreate_user_addresses {
 
 export interface UserAddressCreateMutation_accountAddressCreate_user {
   __typename: "User";
-  /**
-   * The ID of the object.
-   */
   id: string;
   email: string;
   firstName: string;

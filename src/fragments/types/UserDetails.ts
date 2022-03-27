@@ -21,9 +21,6 @@ export interface UserDetails_metadata {
 
 export interface UserDetails {
   __typename: "User";
-  /**
-   * The ID of the object.
-   */
   id: string;
   email: string;
   firstName: string;

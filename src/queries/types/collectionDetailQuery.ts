@@ -11,11 +11,8 @@ import { LanguageCodeEnum } from "./../../globalTypes";
 
 export interface collectionDetailQuery_collection_translation {
   __typename: "CollectionTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
   seoTitle: string | null;
   seoDescription: string | null;
 }
@@ -34,9 +31,6 @@ export interface collectionDetailQuery_collection_backgroundImage {
 
 export interface collectionDetailQuery_collection {
   __typename: "Collection";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;

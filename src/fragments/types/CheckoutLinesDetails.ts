@@ -10,30 +10,27 @@
 export interface CheckoutLinesDetails_lines_variant_images {
   __typename: "ProductImage";
   /**
-   * The ID of the object.
+   * The ID of the image.
    */
   id: string;
   /**
    * The URL of the image.
    */
   url: string;
-  alt: string;
+  /**
+   * The alt text of the image.
+   */
+  alt: string | null;
 }
 
 export interface CheckoutLinesDetails_lines_variant_attributes_attribute_translation {
   __typename: "AttributeTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
 }
 
 export interface CheckoutLinesDetails_lines_variant_attributes_attribute {
   __typename: "Attribute";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * Name of an attribute displayed in the interface.
@@ -47,18 +44,12 @@ export interface CheckoutLinesDetails_lines_variant_attributes_attribute {
 
 export interface CheckoutLinesDetails_lines_variant_attributes_values_translation {
   __typename: "AttributeValueTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
 }
 
 export interface CheckoutLinesDetails_lines_variant_attributes_values {
   __typename: "AttributeValue";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * Name of a value displayed in the interface.
@@ -112,27 +103,18 @@ export interface CheckoutLinesDetails_lines_variant_pricing {
 
 export interface CheckoutLinesDetails_lines_variant_translation {
   __typename: "ProductVariantTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
 }
 
 export interface CheckoutLinesDetails_lines_variant_product_category_translation {
   __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface CheckoutLinesDetails_lines_variant_product_category {
   __typename: "Category";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   /**
@@ -155,24 +137,24 @@ export interface CheckoutLinesDetails_lines_variant_product_thumbnail {
 
 export interface CheckoutLinesDetails_lines_variant_product_translation {
   __typename: "ProductTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
-  descriptionJson: any;
+  name: string | null;
+  /**
+   * Translated description of the product (JSON).
+   */
+  descriptionJson: any | null;
 }
 
 export interface CheckoutLinesDetails_lines_variant_product {
   __typename: "Product";
-  /**
-   * The ID of the object.
-   */
   id: string;
   slug: string;
   name: string;
   category: CheckoutLinesDetails_lines_variant_product_category | null;
-  descriptionJson: any;
+  /**
+   * Description of the product (JSON).
+   */
+  descriptionJson: any | null;
   /**
    * The main thumbnail for a product.
    */
@@ -185,16 +167,13 @@ export interface CheckoutLinesDetails_lines_variant_product {
 
 export interface CheckoutLinesDetails_lines_variant {
   __typename: "ProductVariant";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
-  sku: string;
+  sku: string | null;
   /**
-   * Quantity of a product available for sale in one checkout.
+   * Quantity of a product available for sale in one checkout. Field value will be `null` when no `limitQuantityPerCheckout` in global settings has been set, and `productVariant` stocks are not tracked.
    */
-  quantityAvailable: number;
+  quantityAvailable: number | null;
   /**
    * List of images for the product variant.
    */
@@ -236,9 +215,6 @@ export interface CheckoutLinesDetails_lines_totalPrice {
 
 export interface CheckoutLinesDetails_lines {
   __typename: "CheckoutLine";
-  /**
-   * The ID of the object.
-   */
   id: string;
   variant: CheckoutLinesDetails_lines_variant;
   quantity: number;

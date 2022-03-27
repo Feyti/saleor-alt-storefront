@@ -9,18 +9,12 @@
 
 export interface cartBadgeQuery_me_checkout_lines {
   __typename: "CheckoutLine";
-  /**
-   * The ID of the object.
-   */
   id: string;
   quantity: number;
 }
 
 export interface cartBadgeQuery_me_checkout {
   __typename: "Checkout";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * The checkout's token.
@@ -34,9 +28,6 @@ export interface cartBadgeQuery_me_checkout {
 
 export interface cartBadgeQuery_me {
   __typename: "User";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * Returns the last open checkout of this user.

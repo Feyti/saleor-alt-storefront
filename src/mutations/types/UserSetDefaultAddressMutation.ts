@@ -51,9 +51,6 @@ export interface UserSetDefaultAddressMutation_accountSetDefaultAddress_user_add
 
 export interface UserSetDefaultAddressMutation_accountSetDefaultAddress_user_addresses {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;
@@ -81,9 +78,6 @@ export interface UserSetDefaultAddressMutation_accountSetDefaultAddress_user_add
 
 export interface UserSetDefaultAddressMutation_accountSetDefaultAddress_user {
   __typename: "User";
-  /**
-   * The ID of the object.
-   */
   id: string;
   email: string;
   firstName: string;

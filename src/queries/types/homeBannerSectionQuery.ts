@@ -11,11 +11,8 @@ import { LanguageCodeEnum } from "./../../globalTypes";
 
 export interface homeBannerSectionQuery_menu_items_category_translation {
   __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface homeBannerSectionQuery_menu_items_category_backgroundImage {
@@ -32,9 +29,6 @@ export interface homeBannerSectionQuery_menu_items_category_backgroundImage {
 
 export interface homeBannerSectionQuery_menu_items_category {
   __typename: "Category";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -48,11 +42,8 @@ export interface homeBannerSectionQuery_menu_items_category {
 
 export interface homeBannerSectionQuery_menu_items_collection_translation {
   __typename: "CollectionTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface homeBannerSectionQuery_menu_items_collection_backgroundImage {
@@ -69,9 +60,6 @@ export interface homeBannerSectionQuery_menu_items_collection_backgroundImage {
 
 export interface homeBannerSectionQuery_menu_items_collection {
   __typename: "Collection";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -84,9 +72,6 @@ export interface homeBannerSectionQuery_menu_items_collection {
 
 export interface homeBannerSectionQuery_menu_items {
   __typename: "MenuItem";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   category: homeBannerSectionQuery_menu_items_category | null;
@@ -99,9 +84,6 @@ export interface homeBannerSectionQuery_menu_items {
 
 export interface homeBannerSectionQuery_menu {
   __typename: "Menu";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   items: (homeBannerSectionQuery_menu_items | null)[] | null;

@@ -103,9 +103,6 @@ export interface ordersQuery_me_orders_edges_node_shippingAddress_country {
 
 export interface ordersQuery_me_orders_edges_node_shippingAddress {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;
@@ -145,9 +142,6 @@ export interface ordersQuery_me_orders_edges_node_billingAddress_country {
 
 export interface ordersQuery_me_orders_edges_node_billingAddress {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;
@@ -188,26 +182,26 @@ export interface ordersQuery_me_orders_edges_node_shippingMethod_price {
 export interface ordersQuery_me_orders_edges_node_shippingMethod {
   __typename: "ShippingMethod";
   /**
-   * The ID of the object.
+   * Unique ID of ShippingMethod available for Order.
    */
   id: string;
+  /**
+   * Shipping method name.
+   */
   name: string;
-  price: ordersQuery_me_orders_edges_node_shippingMethod_price | null;
+  /**
+   * The price of selected shipping method.
+   */
+  price: ordersQuery_me_orders_edges_node_shippingMethod_price;
 }
 
 export interface ordersQuery_me_orders_edges_node_fulfillments_lines_orderLine {
   __typename: "OrderLine";
-  /**
-   * The ID of the object.
-   */
   id: string;
 }
 
 export interface ordersQuery_me_orders_edges_node_fulfillments_lines {
   __typename: "FulfillmentLine";
-  /**
-   * The ID of the object.
-   */
   id: string;
   quantity: number;
   orderLine: ordersQuery_me_orders_edges_node_fulfillments_lines_orderLine | null;
@@ -215,9 +209,6 @@ export interface ordersQuery_me_orders_edges_node_fulfillments_lines {
 
 export interface ordersQuery_me_orders_edges_node_fulfillments {
   __typename: "Fulfillment";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * List of lines for the fulfillment.
@@ -239,9 +230,6 @@ export interface ordersQuery_me_orders_edges_node_invoices {
    * URL to download an invoice.
    */
   url: string | null;
-  /**
-   * Created date time of job in ISO 8601 format.
-   */
   createdAt: any;
 }
 
@@ -268,30 +256,27 @@ export interface ordersQuery_me_orders_edges_node_lines_unitPrice {
 export interface ordersQuery_me_orders_edges_node_lines_variant_images {
   __typename: "ProductImage";
   /**
-   * The ID of the object.
+   * The ID of the image.
    */
   id: string;
   /**
    * The URL of the image.
    */
   url: string;
-  alt: string;
+  /**
+   * The alt text of the image.
+   */
+  alt: string | null;
 }
 
 export interface ordersQuery_me_orders_edges_node_lines_variant_attributes_attribute_translation {
   __typename: "AttributeTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
 }
 
 export interface ordersQuery_me_orders_edges_node_lines_variant_attributes_attribute {
   __typename: "Attribute";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * Name of an attribute displayed in the interface.
@@ -305,18 +290,12 @@ export interface ordersQuery_me_orders_edges_node_lines_variant_attributes_attri
 
 export interface ordersQuery_me_orders_edges_node_lines_variant_attributes_values_translation {
   __typename: "AttributeValueTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
 }
 
 export interface ordersQuery_me_orders_edges_node_lines_variant_attributes_values {
   __typename: "AttributeValue";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * Name of a value displayed in the interface.
@@ -370,9 +349,6 @@ export interface ordersQuery_me_orders_edges_node_lines_variant_pricing {
 
 export interface ordersQuery_me_orders_edges_node_lines_variant_translation {
   __typename: "ProductVariantTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
 }
@@ -391,23 +367,23 @@ export interface ordersQuery_me_orders_edges_node_lines_variant_product_thumbnai
 
 export interface ordersQuery_me_orders_edges_node_lines_variant_product_translation {
   __typename: "ProductTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
-  descriptionJson: any;
+  name: string | null;
+  /**
+   * Translated description of the product (JSON).
+   */
+  descriptionJson: any | null;
 }
 
 export interface ordersQuery_me_orders_edges_node_lines_variant_product {
   __typename: "Product";
-  /**
-   * The ID of the object.
-   */
   id: string;
   slug: string;
   name: string;
-  descriptionJson: any;
+  /**
+   * Description of the product (JSON).
+   */
+  descriptionJson: any | null;
   /**
    * The main thumbnail for a product.
    */
@@ -420,12 +396,9 @@ export interface ordersQuery_me_orders_edges_node_lines_variant_product {
 
 export interface ordersQuery_me_orders_edges_node_lines_variant {
   __typename: "ProductVariant";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
-  sku: string;
+  sku: string | null;
   /**
    * List of images for the product variant.
    */
@@ -447,9 +420,6 @@ export interface ordersQuery_me_orders_edges_node_lines_variant {
 
 export interface ordersQuery_me_orders_edges_node_lines {
   __typename: "OrderLine";
-  /**
-   * The ID of the object.
-   */
   id: string;
   isShippingRequired: boolean;
   quantity: number;
@@ -457,7 +427,7 @@ export interface ordersQuery_me_orders_edges_node_lines {
   /**
    * Price of the single item in the order line.
    */
-  unitPrice: ordersQuery_me_orders_edges_node_lines_unitPrice | null;
+  unitPrice: ordersQuery_me_orders_edges_node_lines_unitPrice;
   /**
    * A purchased product variant. Note: this field may be null if the variant has been removed from stock at all.
    */
@@ -466,9 +436,6 @@ export interface ordersQuery_me_orders_edges_node_lines {
 
 export interface ordersQuery_me_orders_edges_node {
   __typename: "Order";
-  /**
-   * The ID of the object.
-   */
   id: string;
   created: any;
   status: OrderStatus;
@@ -484,21 +451,24 @@ export interface ordersQuery_me_orders_edges_node {
   /**
    * Informs if an order is fully paid.
    */
-  isPaid: boolean | null;
+  isPaid: boolean;
   /**
    * Total amount of the order.
    */
-  total: ordersQuery_me_orders_edges_node_total | null;
+  total: ordersQuery_me_orders_edges_node_total;
   /**
    * The sum of line prices not including shipping.
    */
-  subtotal: ordersQuery_me_orders_edges_node_subtotal | null;
+  subtotal: ordersQuery_me_orders_edges_node_subtotal;
   /**
    * Total price of shipping.
    */
-  shippingPrice: ordersQuery_me_orders_edges_node_shippingPrice | null;
+  shippingPrice: ordersQuery_me_orders_edges_node_shippingPrice;
   shippingAddress: ordersQuery_me_orders_edges_node_shippingAddress | null;
   billingAddress: ordersQuery_me_orders_edges_node_billingAddress | null;
+  /**
+   * Shipping method for this order.
+   */
   shippingMethod: ordersQuery_me_orders_edges_node_shippingMethod | null;
   /**
    * List of shipments for the order.
@@ -537,9 +507,6 @@ export interface ordersQuery_me_orders {
 
 export interface ordersQuery_me {
   __typename: "User";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * List of user's orders.

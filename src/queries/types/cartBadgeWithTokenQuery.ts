@@ -9,18 +9,12 @@
 
 export interface cartBadgeWithTokenQuery_checkout_lines {
   __typename: "CheckoutLine";
-  /**
-   * The ID of the object.
-   */
   id: string;
   quantity: number;
 }
 
 export interface cartBadgeWithTokenQuery_checkout {
   __typename: "Checkout";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * The checkout's token.
@@ -34,7 +28,7 @@ export interface cartBadgeWithTokenQuery_checkout {
 
 export interface cartBadgeWithTokenQuery {
   /**
-   * Look up a checkout by token.
+   * Look up a checkout by token and slug of channel.
    */
   checkout: cartBadgeWithTokenQuery_checkout | null;
 }

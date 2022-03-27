@@ -40,10 +40,16 @@ export interface CartCreateMutation_checkoutCreate_checkout_shippingMethod_minim
 export interface CartCreateMutation_checkoutCreate_checkout_shippingMethod {
   __typename: "ShippingMethod";
   /**
-   * The ID of the object.
+   * Unique ID of ShippingMethod available for Order.
    */
   id: string;
+  /**
+   * Shipping method name.
+   */
   name: string;
+  /**
+   * Minimal order price for this shipping method.
+   */
   minimumOrderPrice: CartCreateMutation_checkoutCreate_checkout_shippingMethod_minimumOrderPrice | null;
 }
 
@@ -121,23 +127,20 @@ export interface CartCreateMutation_checkoutCreate_checkout_discount {
 
 export interface CartCreateMutation_checkoutCreate_checkout_lines {
   __typename: "CheckoutLine";
-  /**
-   * The ID of the object.
-   */
   id: string;
   quantity: number;
 }
 
 export interface CartCreateMutation_checkoutCreate_checkout {
   __typename: "Checkout";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * The checkout's token.
    */
   token: any;
+  /**
+   * The shipping method related with checkout.
+   */
   shippingMethod: CartCreateMutation_checkoutCreate_checkout_shippingMethod | null;
   /**
    * The price of the shipping, with all the taxes included.

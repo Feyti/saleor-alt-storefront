@@ -47,9 +47,6 @@ export interface ProductsQuery_minPrice_edges_node_pricing {
 
 export interface ProductsQuery_minPrice_edges_node {
   __typename: "Product";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * Lists the storefront product's pricing, the current price and discounts, only meant for displaying.
@@ -108,9 +105,6 @@ export interface ProductsQuery_maxPrice_edges_node_pricing {
 
 export interface ProductsQuery_maxPrice_edges_node {
   __typename: "Product";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * Lists the storefront product's pricing, the current price and discounts, only meant for displaying.
@@ -129,55 +123,6 @@ export interface ProductsQuery_maxPrice_edges {
 export interface ProductsQuery_maxPrice {
   __typename: "ProductCountableConnection";
   edges: ProductsQuery_maxPrice_edges[];
-}
-
-export interface ProductsQuery_attributes_edges_node_values {
-  __typename: "AttributeValue";
-  /**
-   * The ID of the object.
-   */
-  id: string;
-  /**
-   * Name of a value displayed in the interface.
-   */
-  name: string | null;
-  /**
-   * Internal representation of a value (unique per attribute).
-   */
-  slug: string | null;
-}
-
-export interface ProductsQuery_attributes_edges_node {
-  __typename: "Attribute";
-  /**
-   * The ID of the object.
-   */
-  id: string;
-  /**
-   * Name of an attribute displayed in the interface.
-   */
-  name: string | null;
-  /**
-   * Internal representation of an attribute name.
-   */
-  slug: string | null;
-  /**
-   * List of attribute's values.
-   */
-  values: (ProductsQuery_attributes_edges_node_values | null)[] | null;
-}
-
-export interface ProductsQuery_attributes_edges {
-  __typename: "AttributeCountableEdge";
-  /**
-   * The item at the end of the edge.
-   */
-  node: ProductsQuery_attributes_edges_node;
-}
-
-export interface ProductsQuery_attributes {
-  __typename: "AttributeCountableConnection";
-  edges: ProductsQuery_attributes_edges[];
 }
 
 export interface ProductsQuery_products_pageInfo {
@@ -203,30 +148,27 @@ export interface ProductsQuery_products_edges_node_thumbnail {
 export interface ProductsQuery_products_edges_node_images {
   __typename: "ProductImage";
   /**
-   * The ID of the object.
+   * The ID of the image.
    */
   id: string;
   /**
    * The URL of the image.
    */
   url: string;
-  alt: string;
+  /**
+   * The alt text of the image.
+   */
+  alt: string | null;
 }
 
 export interface ProductsQuery_products_edges_node_collections_translation {
   __typename: "CollectionTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface ProductsQuery_products_edges_node_collections {
   __typename: "Collection";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -238,18 +180,12 @@ export interface ProductsQuery_products_edges_node_collections {
 
 export interface ProductsQuery_products_edges_node_category_translation {
   __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface ProductsQuery_products_edges_node_category {
   __typename: "Category";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -410,18 +346,12 @@ export interface ProductsQuery_products_edges_node_pricing {
 
 export interface ProductsQuery_products_edges_node_translation {
   __typename: "ProductTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface ProductsQuery_products_edges_node {
   __typename: "Product";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -478,10 +408,6 @@ export interface ProductsQuery {
    * List of the shop's products.
    */
   maxPrice: ProductsQuery_maxPrice | null;
-  /**
-   * List of the shop's attributes.
-   */
-  attributes: ProductsQuery_attributes | null;
   /**
    * List of the shop's products.
    */

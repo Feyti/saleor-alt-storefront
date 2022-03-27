@@ -22,10 +22,16 @@ export interface CheckoutDetails_shippingMethod_minimumOrderPrice {
 export interface CheckoutDetails_shippingMethod {
   __typename: "ShippingMethod";
   /**
-   * The ID of the object.
+   * Unique ID of ShippingMethod available for Order.
    */
   id: string;
+  /**
+   * Shipping method name.
+   */
   name: string;
+  /**
+   * Minimal order price for this shipping method.
+   */
   minimumOrderPrice: CheckoutDetails_shippingMethod_minimumOrderPrice | null;
 }
 
@@ -116,11 +122,17 @@ export interface CheckoutDetails_availableShippingMethods_price {
 export interface CheckoutDetails_availableShippingMethods {
   __typename: "ShippingMethod";
   /**
-   * The ID of the object.
+   * Unique ID of ShippingMethod available for Order.
    */
   id: string;
+  /**
+   * Shipping method name.
+   */
   name: string;
-  price: CheckoutDetails_availableShippingMethods_price | null;
+  /**
+   * The price of selected shipping method.
+   */
+  price: CheckoutDetails_availableShippingMethods_price;
 }
 
 export interface CheckoutDetails_shippingAddress_country {
@@ -137,9 +149,6 @@ export interface CheckoutDetails_shippingAddress_country {
 
 export interface CheckoutDetails_shippingAddress {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;
@@ -179,9 +188,6 @@ export interface CheckoutDetails_billingAddress_country {
 
 export interface CheckoutDetails_billingAddress {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;
@@ -237,9 +243,6 @@ export interface CheckoutDetails_availablePaymentGateways {
 
 export interface CheckoutDetails {
   __typename: "Checkout";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * The checkout's token.
@@ -248,7 +251,10 @@ export interface CheckoutDetails {
   /**
    * Email of a customer.
    */
-  email: string;
+  email: string | null;
+  /**
+   * The shipping method related with checkout.
+   */
   shippingMethod: CheckoutDetails_shippingMethod | null;
   /**
    * The price of the shipping, with all the taxes included.
@@ -265,7 +271,7 @@ export interface CheckoutDetails {
   discount: CheckoutDetails_discount | null;
   voucherCode: string | null;
   /**
-   * Shipping methods that can be used with this order.
+   * Shipping methods that can be used with this checkout.
    */
   availableShippingMethods: (CheckoutDetails_availableShippingMethods | null)[];
   shippingAddress: CheckoutDetails_shippingAddress | null;

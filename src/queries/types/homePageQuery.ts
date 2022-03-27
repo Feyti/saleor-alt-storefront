@@ -9,26 +9,6 @@ import { LanguageCodeEnum } from "./../../globalTypes";
 // GraphQL query operation: homePageQuery
 // ====================================================
 
-export interface homePageQuery_shop_geolocalization_country {
-  __typename: "CountryDisplay";
-  /**
-   * Country code.
-   */
-  code: string;
-  /**
-   * Country name.
-   */
-  country: string;
-}
-
-export interface homePageQuery_shop_geolocalization {
-  __typename: "Geolocalization";
-  /**
-   * Country of the user acquired by his IP address.
-   */
-  country: homePageQuery_shop_geolocalization_country | null;
-}
-
 export interface homePageQuery_shop_companyAddress_country {
   __typename: "CountryDisplay";
   /**
@@ -43,9 +23,6 @@ export interface homePageQuery_shop_companyAddress_country {
 
 export interface homePageQuery_shop_companyAddress {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;
@@ -73,9 +50,6 @@ export interface homePageQuery_shop_companyAddress {
 
 export interface homePageQuery_shop_translation {
   __typename: "ShopTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
   headerText: string;
   description: string;
@@ -91,10 +65,6 @@ export interface homePageQuery_shop {
    * Shop's description.
    */
   description: string | null;
-  /**
-   * Customer's geolocalization data.
-   */
-  geolocalization: homePageQuery_shop_geolocalization | null;
   /**
    * Company address.
    */

@@ -24,30 +24,27 @@ export interface productDetailQuery_product_thumbnail {
 export interface productDetailQuery_product_images {
   __typename: "ProductImage";
   /**
-   * The ID of the object.
+   * The ID of the image.
    */
   id: string;
   /**
    * The URL of the image.
    */
   url: string;
-  alt: string;
+  /**
+   * The alt text of the image.
+   */
+  alt: string | null;
 }
 
 export interface productDetailQuery_product_collections_translation {
   __typename: "CollectionTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface productDetailQuery_product_collections {
   __typename: "Collection";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -59,291 +56,12 @@ export interface productDetailQuery_product_collections {
 
 export interface productDetailQuery_product_category_translation {
   __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_thumbnail {
-  __typename: "Image";
-  /**
-   * The URL of the image.
-   */
-  url: string;
-  /**
-   * Alt text for an image.
-   */
-  alt: string | null;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_images {
-  __typename: "ProductImage";
-  /**
-   * The ID of the object.
-   */
-  id: string;
-  /**
-   * The URL of the image.
-   */
-  url: string;
-  alt: string;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_collections_translation {
-  __typename: "CollectionTranslation";
-  /**
-   * The ID of the object.
-   */
-  id: string;
-  name: string;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_collections {
-  __typename: "Collection";
-  /**
-   * The ID of the object.
-   */
-  id: string;
-  name: string;
-  slug: string;
-  /**
-   * Returns translated collection fields for the given language code.
-   */
-  translation: productDetailQuery_product_category_products_edges_node_collections_translation | null;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_category_translation {
-  __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
-  id: string;
-  name: string;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_category {
-  __typename: "Category";
-  /**
-   * The ID of the object.
-   */
-  id: string;
-  name: string;
-  slug: string;
-  level: number;
-  /**
-   * Returns translated category fields for the given language code.
-   */
-  translation: productDetailQuery_product_category_products_edges_node_category_translation | null;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_pricing_discount_gross {
-  __typename: "Money";
-  /**
-   * Currency code.
-   */
-  currency: string;
-  /**
-   * Amount of money.
-   */
-  amount: number;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_pricing_discount {
-  __typename: "TaxedMoney";
-  /**
-   * Currency code.
-   */
-  currency: string;
-  /**
-   * Amount of money including taxes.
-   */
-  gross: productDetailQuery_product_category_products_edges_node_pricing_discount_gross;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_pricing_priceRange_start_gross {
-  __typename: "Money";
-  /**
-   * Currency code.
-   */
-  currency: string;
-  /**
-   * Amount of money.
-   */
-  amount: number;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_pricing_priceRange_start {
-  __typename: "TaxedMoney";
-  /**
-   * Amount of money including taxes.
-   */
-  gross: productDetailQuery_product_category_products_edges_node_pricing_priceRange_start_gross;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_pricing_priceRange_stop_gross {
-  __typename: "Money";
-  /**
-   * Currency code.
-   */
-  currency: string;
-  /**
-   * Amount of money.
-   */
-  amount: number;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_pricing_priceRange_stop {
-  __typename: "TaxedMoney";
-  /**
-   * Amount of money including taxes.
-   */
-  gross: productDetailQuery_product_category_products_edges_node_pricing_priceRange_stop_gross;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_pricing_priceRange {
-  __typename: "TaxedMoneyRange";
-  /**
-   * Lower bound of a price range.
-   */
-  start: productDetailQuery_product_category_products_edges_node_pricing_priceRange_start | null;
-  /**
-   * Upper bound of a price range.
-   */
-  stop: productDetailQuery_product_category_products_edges_node_pricing_priceRange_stop | null;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_pricing_priceRangeUndiscounted_start_gross {
-  __typename: "Money";
-  /**
-   * Currency code.
-   */
-  currency: string;
-  /**
-   * Amount of money.
-   */
-  amount: number;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_pricing_priceRangeUndiscounted_start {
-  __typename: "TaxedMoney";
-  /**
-   * Amount of money including taxes.
-   */
-  gross: productDetailQuery_product_category_products_edges_node_pricing_priceRangeUndiscounted_start_gross;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_pricing_priceRangeUndiscounted_stop_gross {
-  __typename: "Money";
-  /**
-   * Currency code.
-   */
-  currency: string;
-  /**
-   * Amount of money.
-   */
-  amount: number;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_pricing_priceRangeUndiscounted_stop {
-  __typename: "TaxedMoney";
-  /**
-   * Amount of money including taxes.
-   */
-  gross: productDetailQuery_product_category_products_edges_node_pricing_priceRangeUndiscounted_stop_gross;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_pricing_priceRangeUndiscounted {
-  __typename: "TaxedMoneyRange";
-  /**
-   * Lower bound of a price range.
-   */
-  start: productDetailQuery_product_category_products_edges_node_pricing_priceRangeUndiscounted_start | null;
-  /**
-   * Upper bound of a price range.
-   */
-  stop: productDetailQuery_product_category_products_edges_node_pricing_priceRangeUndiscounted_stop | null;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_pricing {
-  __typename: "ProductPricingInfo";
-  /**
-   * Whether it is in sale or not.
-   */
-  onSale: boolean | null;
-  /**
-   * The discount amount if in sale (null otherwise).
-   */
-  discount: productDetailQuery_product_category_products_edges_node_pricing_discount | null;
-  /**
-   * The discounted price range of the product variants.
-   */
-  priceRange: productDetailQuery_product_category_products_edges_node_pricing_priceRange | null;
-  /**
-   * The undiscounted price range of the product variants.
-   */
-  priceRangeUndiscounted: productDetailQuery_product_category_products_edges_node_pricing_priceRangeUndiscounted | null;
-}
-
-export interface productDetailQuery_product_category_products_edges_node_translation {
-  __typename: "ProductTranslation";
-  /**
-   * The ID of the object.
-   */
-  id: string;
-  name: string;
-}
-
-export interface productDetailQuery_product_category_products_edges_node {
-  __typename: "Product";
-  /**
-   * The ID of the object.
-   */
-  id: string;
-  name: string;
-  slug: string;
-  /**
-   * The main thumbnail for a product.
-   */
-  thumbnail: productDetailQuery_product_category_products_edges_node_thumbnail | null;
-  /**
-   * List of images for the product.
-   */
-  images: (productDetailQuery_product_category_products_edges_node_images | null)[] | null;
-  /**
-   * List of collections for the product.
-   */
-  collections: (productDetailQuery_product_category_products_edges_node_collections | null)[] | null;
-  category: productDetailQuery_product_category_products_edges_node_category | null;
-  /**
-   * Lists the storefront product's pricing, the current price and discounts, only meant for displaying.
-   */
-  pricing: productDetailQuery_product_category_products_edges_node_pricing | null;
-  /**
-   * Returns translated product fields for the given language code.
-   */
-  translation: productDetailQuery_product_category_products_edges_node_translation | null;
-}
-
-export interface productDetailQuery_product_category_products_edges {
-  __typename: "ProductCountableEdge";
-  /**
-   * The item at the end of the edge.
-   */
-  node: productDetailQuery_product_category_products_edges_node;
-}
-
-export interface productDetailQuery_product_category_products {
-  __typename: "ProductCountableConnection";
-  edges: productDetailQuery_product_category_products_edges[];
+  name: string | null;
 }
 
 export interface productDetailQuery_product_category {
   __typename: "Category";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -352,10 +70,6 @@ export interface productDetailQuery_product_category {
    * Returns translated category fields for the given language code.
    */
   translation: productDetailQuery_product_category_translation | null;
-  /**
-   * List of products in the category.
-   */
-  products: productDetailQuery_product_category_products | null;
 }
 
 export interface productDetailQuery_product_pricing_discount_gross {
@@ -508,30 +222,24 @@ export interface productDetailQuery_product_pricing {
 
 export interface productDetailQuery_product_translation {
   __typename: "ProductTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
-  descriptionJson: any;
+  name: string | null;
+  /**
+   * Translated description of the product (JSON).
+   */
+  descriptionJson: any | null;
   seoTitle: string | null;
   seoDescription: string | null;
 }
 
 export interface productDetailQuery_product_attributes_attribute_translation {
   __typename: "AttributeTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
 }
 
 export interface productDetailQuery_product_attributes_attribute {
   __typename: "Attribute";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * Name of an attribute displayed in the interface.
@@ -545,18 +253,12 @@ export interface productDetailQuery_product_attributes_attribute {
 
 export interface productDetailQuery_product_attributes_values_translation {
   __typename: "AttributeValueTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
 }
 
 export interface productDetailQuery_product_attributes_values {
   __typename: "AttributeValue";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * Name of a value displayed in the interface.
@@ -583,14 +285,17 @@ export interface productDetailQuery_product_attributes {
 export interface productDetailQuery_product_variants_images {
   __typename: "ProductImage";
   /**
-   * The ID of the object.
+   * The ID of the image.
    */
   id: string;
   /**
    * The URL of the image.
    */
   url: string;
-  alt: string;
+  /**
+   * The alt text of the image.
+   */
+  alt: string | null;
 }
 
 export interface productDetailQuery_product_variants_pricing_price_gross {
@@ -623,18 +328,12 @@ export interface productDetailQuery_product_variants_pricing {
 
 export interface productDetailQuery_product_variants_attributes_values_translation {
   __typename: "AttributeValueTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
 }
 
 export interface productDetailQuery_product_variants_attributes_values {
   __typename: "AttributeValue";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * Name of a value displayed in the interface.
@@ -646,88 +345,18 @@ export interface productDetailQuery_product_variants_attributes_values {
   translation: productDetailQuery_product_variants_attributes_values_translation | null;
 }
 
-export interface productDetailQuery_product_variants_attributes_attribute_translation {
-  __typename: "AttributeTranslation";
-  /**
-   * The ID of the object.
-   */
-  id: string;
-  name: string;
-}
-
-export interface productDetailQuery_product_variants_attributes_attribute_values_translation {
-  __typename: "AttributeValueTranslation";
-  /**
-   * The ID of the object.
-   */
-  id: string;
-  name: string;
-}
-
-export interface productDetailQuery_product_variants_attributes_attribute_values {
-  __typename: "AttributeValue";
-  /**
-   * The ID of the object.
-   */
-  id: string;
-  /**
-   * Name of a value displayed in the interface.
-   */
-  name: string | null;
-  /**
-   * Returns translated attribute value fields for the given language code.
-   */
-  translation: productDetailQuery_product_variants_attributes_attribute_values_translation | null;
-}
-
-export interface productDetailQuery_product_variants_attributes_attribute {
-  __typename: "Attribute";
-  /**
-   * The ID of the object.
-   */
-  id: string;
-  /**
-   * Name of an attribute displayed in the interface.
-   */
-  name: string | null;
-  /**
-   * Returns translated attribute fields for the given language code.
-   */
-  translation: productDetailQuery_product_variants_attributes_attribute_translation | null;
-  /**
-   * List of attribute's values.
-   */
-  values: (productDetailQuery_product_variants_attributes_attribute_values | null)[] | null;
-}
-
 export interface productDetailQuery_product_variants_attributes {
   __typename: "SelectedAttribute";
   /**
    * Values of an attribute.
    */
   values: (productDetailQuery_product_variants_attributes_values | null)[];
-  /**
-   * Name of an attribute displayed in the interface.
-   */
-  attribute: productDetailQuery_product_variants_attributes_attribute;
-}
-
-export interface productDetailQuery_product_variants_translation {
-  __typename: "ProductVariantTranslation";
-  /**
-   * The ID of the object.
-   */
-  id: string;
-  name: string;
 }
 
 export interface productDetailQuery_product_variants {
   __typename: "ProductVariant";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  sku: string;
+  sku: string | null;
   name: string;
   /**
    * List of images for the product variant.
@@ -741,21 +370,10 @@ export interface productDetailQuery_product_variants {
    * List of attributes assigned to this variant.
    */
   attributes: productDetailQuery_product_variants_attributes[];
-  /**
-   * Quantity of a product available for sale in one checkout.
-   */
-  quantityAvailable: number;
-  /**
-   * Returns translated product variant fields for the given language code.
-   */
-  translation: productDetailQuery_product_variants_translation | null;
 }
 
 export interface productDetailQuery_product {
   __typename: "Product";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -780,7 +398,10 @@ export interface productDetailQuery_product {
    * Returns translated product fields for the given language code.
    */
   translation: productDetailQuery_product_translation | null;
-  descriptionJson: any;
+  /**
+   * Description of the product (JSON).
+   */
+  descriptionJson: any | null;
   seoTitle: string | null;
   seoDescription: string | null;
   /**
@@ -797,11 +418,295 @@ export interface productDetailQuery_product {
   variants: (productDetailQuery_product_variants | null)[] | null;
 }
 
+export interface productDetailQuery_category_translation {
+  __typename: "CategoryTranslation";
+  id: string;
+  name: string | null;
+}
+
+export interface productDetailQuery_category_products_edges_node_thumbnail {
+  __typename: "Image";
+  /**
+   * The URL of the image.
+   */
+  url: string;
+  /**
+   * Alt text for an image.
+   */
+  alt: string | null;
+}
+
+export interface productDetailQuery_category_products_edges_node_images {
+  __typename: "ProductImage";
+  /**
+   * The ID of the image.
+   */
+  id: string;
+  /**
+   * The URL of the image.
+   */
+  url: string;
+  /**
+   * The alt text of the image.
+   */
+  alt: string | null;
+}
+
+export interface productDetailQuery_category_products_edges_node_collections_translation {
+  __typename: "CollectionTranslation";
+  id: string;
+  name: string | null;
+}
+
+export interface productDetailQuery_category_products_edges_node_collections {
+  __typename: "Collection";
+  id: string;
+  name: string;
+  slug: string;
+  /**
+   * Returns translated collection fields for the given language code.
+   */
+  translation: productDetailQuery_category_products_edges_node_collections_translation | null;
+}
+
+export interface productDetailQuery_category_products_edges_node_category_translation {
+  __typename: "CategoryTranslation";
+  id: string;
+  name: string | null;
+}
+
+export interface productDetailQuery_category_products_edges_node_category {
+  __typename: "Category";
+  id: string;
+  name: string;
+  slug: string;
+  level: number;
+  /**
+   * Returns translated category fields for the given language code.
+   */
+  translation: productDetailQuery_category_products_edges_node_category_translation | null;
+}
+
+export interface productDetailQuery_category_products_edges_node_pricing_discount_gross {
+  __typename: "Money";
+  /**
+   * Currency code.
+   */
+  currency: string;
+  /**
+   * Amount of money.
+   */
+  amount: number;
+}
+
+export interface productDetailQuery_category_products_edges_node_pricing_discount {
+  __typename: "TaxedMoney";
+  /**
+   * Currency code.
+   */
+  currency: string;
+  /**
+   * Amount of money including taxes.
+   */
+  gross: productDetailQuery_category_products_edges_node_pricing_discount_gross;
+}
+
+export interface productDetailQuery_category_products_edges_node_pricing_priceRange_start_gross {
+  __typename: "Money";
+  /**
+   * Currency code.
+   */
+  currency: string;
+  /**
+   * Amount of money.
+   */
+  amount: number;
+}
+
+export interface productDetailQuery_category_products_edges_node_pricing_priceRange_start {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: productDetailQuery_category_products_edges_node_pricing_priceRange_start_gross;
+}
+
+export interface productDetailQuery_category_products_edges_node_pricing_priceRange_stop_gross {
+  __typename: "Money";
+  /**
+   * Currency code.
+   */
+  currency: string;
+  /**
+   * Amount of money.
+   */
+  amount: number;
+}
+
+export interface productDetailQuery_category_products_edges_node_pricing_priceRange_stop {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: productDetailQuery_category_products_edges_node_pricing_priceRange_stop_gross;
+}
+
+export interface productDetailQuery_category_products_edges_node_pricing_priceRange {
+  __typename: "TaxedMoneyRange";
+  /**
+   * Lower bound of a price range.
+   */
+  start: productDetailQuery_category_products_edges_node_pricing_priceRange_start | null;
+  /**
+   * Upper bound of a price range.
+   */
+  stop: productDetailQuery_category_products_edges_node_pricing_priceRange_stop | null;
+}
+
+export interface productDetailQuery_category_products_edges_node_pricing_priceRangeUndiscounted_start_gross {
+  __typename: "Money";
+  /**
+   * Currency code.
+   */
+  currency: string;
+  /**
+   * Amount of money.
+   */
+  amount: number;
+}
+
+export interface productDetailQuery_category_products_edges_node_pricing_priceRangeUndiscounted_start {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: productDetailQuery_category_products_edges_node_pricing_priceRangeUndiscounted_start_gross;
+}
+
+export interface productDetailQuery_category_products_edges_node_pricing_priceRangeUndiscounted_stop_gross {
+  __typename: "Money";
+  /**
+   * Currency code.
+   */
+  currency: string;
+  /**
+   * Amount of money.
+   */
+  amount: number;
+}
+
+export interface productDetailQuery_category_products_edges_node_pricing_priceRangeUndiscounted_stop {
+  __typename: "TaxedMoney";
+  /**
+   * Amount of money including taxes.
+   */
+  gross: productDetailQuery_category_products_edges_node_pricing_priceRangeUndiscounted_stop_gross;
+}
+
+export interface productDetailQuery_category_products_edges_node_pricing_priceRangeUndiscounted {
+  __typename: "TaxedMoneyRange";
+  /**
+   * Lower bound of a price range.
+   */
+  start: productDetailQuery_category_products_edges_node_pricing_priceRangeUndiscounted_start | null;
+  /**
+   * Upper bound of a price range.
+   */
+  stop: productDetailQuery_category_products_edges_node_pricing_priceRangeUndiscounted_stop | null;
+}
+
+export interface productDetailQuery_category_products_edges_node_pricing {
+  __typename: "ProductPricingInfo";
+  /**
+   * Whether it is in sale or not.
+   */
+  onSale: boolean | null;
+  /**
+   * The discount amount if in sale (null otherwise).
+   */
+  discount: productDetailQuery_category_products_edges_node_pricing_discount | null;
+  /**
+   * The discounted price range of the product variants.
+   */
+  priceRange: productDetailQuery_category_products_edges_node_pricing_priceRange | null;
+  /**
+   * The undiscounted price range of the product variants.
+   */
+  priceRangeUndiscounted: productDetailQuery_category_products_edges_node_pricing_priceRangeUndiscounted | null;
+}
+
+export interface productDetailQuery_category_products_edges_node_translation {
+  __typename: "ProductTranslation";
+  id: string;
+  name: string | null;
+}
+
+export interface productDetailQuery_category_products_edges_node {
+  __typename: "Product";
+  id: string;
+  name: string;
+  slug: string;
+  /**
+   * The main thumbnail for a product.
+   */
+  thumbnail: productDetailQuery_category_products_edges_node_thumbnail | null;
+  /**
+   * List of images for the product.
+   */
+  images: (productDetailQuery_category_products_edges_node_images | null)[] | null;
+  /**
+   * List of collections for the product.
+   */
+  collections: (productDetailQuery_category_products_edges_node_collections | null)[] | null;
+  category: productDetailQuery_category_products_edges_node_category | null;
+  /**
+   * Lists the storefront product's pricing, the current price and discounts, only meant for displaying.
+   */
+  pricing: productDetailQuery_category_products_edges_node_pricing | null;
+  /**
+   * Returns translated product fields for the given language code.
+   */
+  translation: productDetailQuery_category_products_edges_node_translation | null;
+}
+
+export interface productDetailQuery_category_products_edges {
+  __typename: "ProductCountableEdge";
+  /**
+   * The item at the end of the edge.
+   */
+  node: productDetailQuery_category_products_edges_node;
+}
+
+export interface productDetailQuery_category_products {
+  __typename: "ProductCountableConnection";
+  edges: productDetailQuery_category_products_edges[];
+}
+
+export interface productDetailQuery_category {
+  __typename: "Category";
+  id: string;
+  name: string;
+  slug: string;
+  level: number;
+  /**
+   * Returns translated category fields for the given language code.
+   */
+  translation: productDetailQuery_category_translation | null;
+  /**
+   * List of products in the category.
+   */
+  products: productDetailQuery_category_products | null;
+}
+
 export interface productDetailQuery {
   /**
    * Look up a product by ID.
    */
   product: productDetailQuery_product | null;
+  /**
+   * Look up a category by ID or slug.
+   */
+  category: productDetailQuery_category | null;
 }
 
 export interface productDetailQueryVariables {

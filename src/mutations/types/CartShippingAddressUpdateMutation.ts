@@ -40,10 +40,16 @@ export interface CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate
 export interface CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate_checkout_shippingMethod {
   __typename: "ShippingMethod";
   /**
-   * The ID of the object.
+   * Unique ID of ShippingMethod available for Order.
    */
   id: string;
+  /**
+   * Shipping method name.
+   */
   name: string;
+  /**
+   * Minimal order price for this shipping method.
+   */
   minimumOrderPrice: CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate_checkout_shippingMethod_minimumOrderPrice | null;
 }
 
@@ -134,11 +140,17 @@ export interface CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate
 export interface CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate_checkout_availableShippingMethods {
   __typename: "ShippingMethod";
   /**
-   * The ID of the object.
+   * Unique ID of ShippingMethod available for Order.
    */
   id: string;
+  /**
+   * Shipping method name.
+   */
   name: string;
-  price: CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate_checkout_availableShippingMethods_price | null;
+  /**
+   * The price of selected shipping method.
+   */
+  price: CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate_checkout_availableShippingMethods_price;
 }
 
 export interface CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate_checkout_shippingAddress_country {
@@ -155,9 +167,6 @@ export interface CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate
 
 export interface CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate_checkout_shippingAddress {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;
@@ -197,9 +206,6 @@ export interface CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate
 
 export interface CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate_checkout_billingAddress {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;
@@ -255,18 +261,12 @@ export interface CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate
 
 export interface CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate_checkout_lines {
   __typename: "CheckoutLine";
-  /**
-   * The ID of the object.
-   */
   id: string;
   quantity: number;
 }
 
 export interface CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate_checkout {
   __typename: "Checkout";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * The checkout's token.
@@ -275,7 +275,10 @@ export interface CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate
   /**
    * Email of a customer.
    */
-  email: string;
+  email: string | null;
+  /**
+   * The shipping method related with checkout.
+   */
   shippingMethod: CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate_checkout_shippingMethod | null;
   /**
    * The price of the shipping, with all the taxes included.
@@ -292,7 +295,7 @@ export interface CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate
   discount: CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate_checkout_discount | null;
   voucherCode: string | null;
   /**
-   * Shipping methods that can be used with this order.
+   * Shipping methods that can be used with this checkout.
    */
   availableShippingMethods: (CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate_checkout_availableShippingMethods | null)[];
   shippingAddress: CartShippingAddressUpdateMutation_checkoutShippingAddressUpdate_checkout_shippingAddress | null;

@@ -40,10 +40,16 @@ export interface CartLineDeleteMutation_checkoutLineDelete_checkout_shippingMeth
 export interface CartLineDeleteMutation_checkoutLineDelete_checkout_shippingMethod {
   __typename: "ShippingMethod";
   /**
-   * The ID of the object.
+   * Unique ID of ShippingMethod available for Order.
    */
   id: string;
+  /**
+   * Shipping method name.
+   */
   name: string;
+  /**
+   * Minimal order price for this shipping method.
+   */
   minimumOrderPrice: CartLineDeleteMutation_checkoutLineDelete_checkout_shippingMethod_minimumOrderPrice | null;
 }
 
@@ -134,11 +140,17 @@ export interface CartLineDeleteMutation_checkoutLineDelete_checkout_availableShi
 export interface CartLineDeleteMutation_checkoutLineDelete_checkout_availableShippingMethods {
   __typename: "ShippingMethod";
   /**
-   * The ID of the object.
+   * Unique ID of ShippingMethod available for Order.
    */
   id: string;
+  /**
+   * Shipping method name.
+   */
   name: string;
-  price: CartLineDeleteMutation_checkoutLineDelete_checkout_availableShippingMethods_price | null;
+  /**
+   * The price of selected shipping method.
+   */
+  price: CartLineDeleteMutation_checkoutLineDelete_checkout_availableShippingMethods_price;
 }
 
 export interface CartLineDeleteMutation_checkoutLineDelete_checkout_shippingAddress_country {
@@ -155,9 +167,6 @@ export interface CartLineDeleteMutation_checkoutLineDelete_checkout_shippingAddr
 
 export interface CartLineDeleteMutation_checkoutLineDelete_checkout_shippingAddress {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;
@@ -197,9 +206,6 @@ export interface CartLineDeleteMutation_checkoutLineDelete_checkout_billingAddre
 
 export interface CartLineDeleteMutation_checkoutLineDelete_checkout_billingAddress {
   __typename: "Address";
-  /**
-   * The ID of the object.
-   */
   id: string;
   firstName: string;
   lastName: string;
@@ -255,18 +261,12 @@ export interface CartLineDeleteMutation_checkoutLineDelete_checkout_availablePay
 
 export interface CartLineDeleteMutation_checkoutLineDelete_checkout_lines {
   __typename: "CheckoutLine";
-  /**
-   * The ID of the object.
-   */
   id: string;
   quantity: number;
 }
 
 export interface CartLineDeleteMutation_checkoutLineDelete_checkout {
   __typename: "Checkout";
-  /**
-   * The ID of the object.
-   */
   id: string;
   /**
    * The checkout's token.
@@ -275,7 +275,10 @@ export interface CartLineDeleteMutation_checkoutLineDelete_checkout {
   /**
    * Email of a customer.
    */
-  email: string;
+  email: string | null;
+  /**
+   * The shipping method related with checkout.
+   */
   shippingMethod: CartLineDeleteMutation_checkoutLineDelete_checkout_shippingMethod | null;
   /**
    * The price of the shipping, with all the taxes included.
@@ -292,7 +295,7 @@ export interface CartLineDeleteMutation_checkoutLineDelete_checkout {
   discount: CartLineDeleteMutation_checkoutLineDelete_checkout_discount | null;
   voucherCode: string | null;
   /**
-   * Shipping methods that can be used with this order.
+   * Shipping methods that can be used with this checkout.
    */
   availableShippingMethods: (CartLineDeleteMutation_checkoutLineDelete_checkout_availableShippingMethods | null)[];
   shippingAddress: CartLineDeleteMutation_checkoutLineDelete_checkout_shippingAddress | null;

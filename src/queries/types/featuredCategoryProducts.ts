@@ -11,11 +11,8 @@ import { LanguageCodeEnum } from "./../../globalTypes";
 
 export interface featuredCategoryProducts_category_translation {
   __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface featuredCategoryProducts_category_products_edges_node_thumbnail {
@@ -33,30 +30,27 @@ export interface featuredCategoryProducts_category_products_edges_node_thumbnail
 export interface featuredCategoryProducts_category_products_edges_node_images {
   __typename: "ProductImage";
   /**
-   * The ID of the object.
+   * The ID of the image.
    */
   id: string;
   /**
    * The URL of the image.
    */
   url: string;
-  alt: string;
+  /**
+   * The alt text of the image.
+   */
+  alt: string | null;
 }
 
 export interface featuredCategoryProducts_category_products_edges_node_collections_translation {
   __typename: "CollectionTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface featuredCategoryProducts_category_products_edges_node_collections {
   __typename: "Collection";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -68,18 +62,12 @@ export interface featuredCategoryProducts_category_products_edges_node_collectio
 
 export interface featuredCategoryProducts_category_products_edges_node_category_translation {
   __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface featuredCategoryProducts_category_products_edges_node_category {
   __typename: "Category";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -240,18 +228,12 @@ export interface featuredCategoryProducts_category_products_edges_node_pricing {
 
 export interface featuredCategoryProducts_category_products_edges_node_translation {
   __typename: "ProductTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
 }
 
 export interface featuredCategoryProducts_category_products_edges_node {
   __typename: "Product";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
@@ -293,9 +275,6 @@ export interface featuredCategoryProducts_category_products {
 
 export interface featuredCategoryProducts_category {
   __typename: "Category";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;

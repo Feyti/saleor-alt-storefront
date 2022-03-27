@@ -21,7 +21,7 @@
     "build-serve": "npm-run-all --serial build serve",
     "codegen": "apollo client:codegen --target=typescript types --globalTypesFile=src/globalTypes.ts",
     "codegen:watch": "npm run codegen -- --watch",
-    "generate:watch": "apollo client:codegen --config ./codegen.yml -- --watch",
+    "generate:watch": "apollo client:codegen --config codegen.yml -- --watch",
     "download-schema": "apollo schema:download --endpoint=https://mhbvufznnx.us-east-1.awsapprunner.com/graphql/ schema/schema.graphql",
     "prettier": "prettier --write src/**/*.{js,jsx,tsx,ts,less,md,json}",
     "test": "umi-test",

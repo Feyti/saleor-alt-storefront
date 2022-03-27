@@ -11,11 +11,8 @@ import { LanguageCodeEnum } from "./../../globalTypes";
 
 export interface categoryDetailQuery_category_translation {
   __typename: "CategoryTranslation";
-  /**
-   * The ID of the object.
-   */
   id: string;
-  name: string;
+  name: string | null;
   seoTitle: string | null;
   seoDescription: string | null;
 }
@@ -34,9 +31,6 @@ export interface categoryDetailQuery_category_backgroundImage {
 
 export interface categoryDetailQuery_category {
   __typename: "Category";
-  /**
-   * The ID of the object.
-   */
   id: string;
   name: string;
   slug: string;
