@@ -21,7 +21,7 @@
     "build-serve": "npm-run-all --serial build serve",
     "codegen": "apollo client:codegen --target=typescript types --globalTypesFile=src/globalTypes.ts",
     "codegen:watch": "npm run codegen -- --watch",
-    "download-schema": "apollo client:download --endpoint=https://mhbvufznnx.us-east-1.awsapprunner.com/graphql/ schema/schema.graphql",
+    "download-schema": "apollo schema:download --endpoint=https://mhbvufznnx.us-east-1.awsapprunner.com/graphql/ schema/schema.graphql",
     "prettier": "prettier --write src/**/*.{js,jsx,tsx,ts,less,md,json}",
     "test": "umi-test",
     "test-e2e:no-build": "testcafe 'chrome:headless' -c 4 src/**/*.e2e.ts --skip-js-errors",
