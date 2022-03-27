@@ -9,12 +9,6 @@ export const HOME_PAGE_QUERY = gql`
     shop {
       name
       description
-      geolocalization {
-        country {
-          code
-          country
-        }
-      }
       companyAddress {
         ...AddressDetails
       }

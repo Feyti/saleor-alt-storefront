@@ -65,36 +65,19 @@ export const PRODUCT_DETAIL_PAGE_QUERY = gql`
               name
             }
           }
-          attribute {
-            id
-            name
-            translation(languageCode: $lang) {
-              id
-              name
-            }
-            values {
-              id
-              name
-              translation(languageCode: $lang) {
-                id
-                name
-              }
-            }
-          }
-        }
-        quantityAvailable
-        translation(languageCode: $lang) {
-          id
-          name
         }
       }
-      category {
-        ...BasicCategoryDetails
-        products(first: 10) {
-          edges {
-            node {
-              ...ProductCard
-            }
+      translation(languageCode: $lang) {
+        id
+        name
+      }
+    }
+    category {
+      ...BasicCategoryDetails
+      products(first: 10) {
+        edges {
+          node {
+            ...ProductCard
           }
         }
       }
