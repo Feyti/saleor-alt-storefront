@@ -1,0 +1,16 @@
+version: 1.0.0
+runtime: node14
+build:
+  commands:
+    build:
+      - yarn install
+run:
+  command: yarn run start
+  network:
+    port: 8000
+    env: PORT
+  env:
+    - name: API_ORIGIN
+      value: "https://mhbvufznnx.us-east-1.awsapprunner.com"
+    - name: API_URI
+      value: "https://mhbvufznnx.us-east-1.awsapprunner.com/graphql/"
