@@ -5,7 +5,6 @@ build:
     build:
       - yarn install
 run:
-  runtime-version: 12.18.4
   command: yarn run start
   network:
     port: 8000
