@@ -1,11 +1,11 @@
 version: 1.0.0
-runtime: nodejs12
+runtime: nodejs14
 build:
   commands:
     build:
-      - yarn install
+      - npm install
 run:
-  command: yarn run start
+  command: npm run start
   network:
     port: 8000
     env: PORT
