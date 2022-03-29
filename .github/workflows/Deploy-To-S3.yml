@@ -1,16 +1,16 @@
 name: Deploy to Cloud
 on:
    push:
-    branches: [ master ]
+    branches: [ react-hook ]
 
 jobs:
   build:
     runs-on: ubuntu-20.04
     env:
-      API_URI: ${{ secrets.AWS_URL }}
+      API_URI: https://mhbvufznnx.us-east-1.awsapprunner.com/graphql/
       API_ORIGIN: https://mhbvufznnx.us-east-1.awsapprunner.com
-      SITE_NAME: Feyit Drug Shop
-      SITE_DESCRIPTION: Drug Shop for All
+      SITE_NAME: Feyit Store
+      SITE_DESCRIPTION: Feyti Drug Shop
       # APP_MOUNT_URI: /store/
       # STATIC_URL: /storefront/
     steps:
