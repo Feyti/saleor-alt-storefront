@@ -3,6 +3,8 @@
 import { PRODUCT_CARD_FRAGMENT } from "@/fragments/product";
 import { gql } from "@apollo/client";
 
+// TODO: use channel specific queries
+
 export const PRODUCTS_QUERY = gql`
   ${PRODUCT_CARD_FRAGMENT}
   query ProductsQuery(

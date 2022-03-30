@@ -1,6 +1,8 @@
 import { gql } from "@apollo/client";
 import { COLLECTION_BASIC_DETAILS_FRAGMENT } from "@/fragments/collection";
 
+// TODO: use channel specific queries
+
 export const COLLECTION_DETAIL_PAGE_QUERY = gql`
   ${COLLECTION_BASIC_DETAILS_FRAGMENT}
   query collectionDetailQuery($collection: ID!, $lang: LanguageCodeEnum!) {

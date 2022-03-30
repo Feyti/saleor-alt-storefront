@@ -2,6 +2,8 @@ import { CATEGORY_BASIC_DETAILS_FRAGMENT } from "@/fragments/category";
 import { PRODUCT_CARD_FRAGMENT } from "@/fragments/product";
 import { gql } from "@apollo/client";
 
+//TODO:  make the query such that it use chanel specific products
+
 export const PRODUCT_DETAIL_PAGE_QUERY = gql`
   ${PRODUCT_CARD_FRAGMENT}
   ${CATEGORY_BASIC_DETAILS_FRAGMENT}
