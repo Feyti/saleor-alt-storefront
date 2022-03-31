@@ -23,6 +23,7 @@ export const PRODUCTS_QUERY = gql`
   ) {
     minPrice: products(
       filter: { stockAvailability: IN_STOCK, isPublished: true }
+      channel: "default-channel"
       first: 1
       sortBy: { field: PRICE, direction: ASC }
     ) {
@@ -45,6 +46,7 @@ export const PRODUCTS_QUERY = gql`
     maxPrice: products(
       filter: { stockAvailability: IN_STOCK, isPublished: true }
       first: 1
+      channel: "default-channel"
       sortBy: { field: PRICE, direction: DESC }
     ) {
       edges {
@@ -77,6 +79,7 @@ export const PRODUCTS_QUERY = gql`
       sortBy: $sortBy
       first: $prodsPerPage
       after: $cursor
+      channel: "default-channel"
     ) {
       pageInfo {
         hasNextPage

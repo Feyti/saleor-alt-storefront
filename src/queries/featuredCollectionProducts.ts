@@ -11,6 +11,7 @@ export const FEATURED_COLLECTION_PRODUCTS_QUERY = gql`
     $slug: String!
     $first: Int!
     $lang: LanguageCodeEnum!
+    channel: "default-channel"
   ) {
     collection(slug: $slug) {
       ...BasicCollectionDetails
