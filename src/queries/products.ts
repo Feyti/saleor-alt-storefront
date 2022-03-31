@@ -23,7 +23,6 @@ export const PRODUCTS_QUERY = gql`
   ) {
     minPrice: products(
       filter: { stockAvailability: IN_STOCK, isPublished: true }
-      channel: "default-channel"
       first: 1
       sortBy: { field: PRICE, direction: ASC }
     ) {

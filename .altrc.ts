@@ -229,7 +229,8 @@ const altConfig: AltConfig = {
         {
           imageUrl: "https://via.placeholder.com/256",
           alt: "sample image",
-          linkUrl: "https://saleor-alt.com",
+          linkUrl:
+            "https://mfeyti-storefront-static-hosting.s3.af-south-1.amazonaws.com/index.html",
           title: "External Image Example",
           googleAnalyticsPromoData: {
             promotion_id: "demo123",
@@ -242,7 +243,8 @@ const altConfig: AltConfig = {
         {
           imageUrl: "https://via.placeholder.com/300",
           alt: "sample image",
-          linkUrl: "https://saleor-alt.com",
+          linkUrl:
+            "https://mfeyti-storefront-static-hosting.s3.af-south-1.amazonaws.com/index.html",
           title: "Placeholder 2",
           googleAnalyticsPromoData: {
             promotion_id: "pwa123",

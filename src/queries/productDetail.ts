@@ -12,7 +12,7 @@ export const PRODUCT_DETAIL_PAGE_QUERY = gql`
     $productSlug: String
     $lang: LanguageCodeEnum!
   ) {
-    product(id: $productID, slug: $productSlug, channel: "default-channel") {
+    product(id: $productID, slug: $productSlug) {
       ...ProductCard
       descriptionJson
       seoTitle
