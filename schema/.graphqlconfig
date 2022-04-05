@@ -6,7 +6,8 @@
       "Default GraphQL Endpoint": {
         "url": "https://mhbvufznnx.us-east-1.awsapprunner.com/graphql/",
         "headers": {
-          "user-agent": "JS GraphQL"
+          "user-agent": "JS GraphQL",
+          "Authorization": "bearer Ql4I7RSxi6SnBJqliQ5DIWciE2W6N0"
         },
         "introspect": false
       }

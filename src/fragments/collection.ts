@@ -6,6 +6,7 @@ export const COLLECTION_BASIC_DETAILS_FRAGMENT = gql`
     id
     name
     slug
+    channel
     translation(languageCode: $lang) {
       id
       name
