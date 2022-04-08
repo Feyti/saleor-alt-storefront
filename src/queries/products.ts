@@ -25,6 +25,7 @@ export const PRODUCTS_QUERY = gql`
       filter: { stockAvailability: IN_STOCK, isPublished: true }
       first: 1
       sortBy: { field: PRICE, direction: ASC }
+      channel: "default-channel"
     ) {
       edges {
         node {

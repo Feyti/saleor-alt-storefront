@@ -6,6 +6,8 @@ if (APP_ENV !== "production") {
   console.log("================");
 }
 
+// @ts-ignore
+// @ts-ignore
 export default {
   env: APP_ENV,
   apiEndpoint: API_URI,

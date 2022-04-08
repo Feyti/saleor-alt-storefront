@@ -10,6 +10,7 @@ import config from "@/config";
 const SearchPage = () => {
   const intl = useIntl();
   const location = useLocation();
+  // @ts-ignore
   const query = location.query?.q || null;
 
   useEffect(() => {

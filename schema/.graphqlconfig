@@ -7,7 +7,7 @@
         "url": "https://mhbvufznnx.us-east-1.awsapprunner.com/graphql/",
         "headers": {
           "user-agent": "JS GraphQL",
-          "Authorization": "bearer Ql4I7RSxi6SnBJqliQ5DIWciE2W6N0"
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJpYXQiOjE2NDkxODY4NjgsIm93bmVyIjoic2FsZW9yIiwiZXhwIjoxNjQ5MTg3MTY4LCJ0b2tlbiI6IlhEeFRmWTh0dFNnUiIsImVtYWlsIjoibWljaGFlbEBnb2J6LmxpdmUiLCJ0eXBlIjoiYWNjZXNzIiwidXNlcl9pZCI6IlZYTmxjam81T0RVPSIsImlzX3N0YWZmIjp0cnVlfQ.OFBc-lv3XBQI9HNJQCt5mQ0H1dGa-338_r5dmHq-XrYTLvEkXW8tw238xD5cCmufvXrl8l7GuzBrKmZkiSK48oVKFkD_JrURm2610RxSDBN_RkkX6t5UqkQagL2bFk0K20ysurhfvVkfs-Nq6xj3_PRz5YyWz1ykMKPkHcqUyK4lb2keGBcXnoyigq3Wj9Gf5R0PqEInqMVXtWNbFRzfI2nzzdP_PCJm9VGrpqhIgw-r-yB5i3KkGJkieQlo1Df7ktdqpXkWIfr0yoAsrei5uJk9_-SeubXITkcQ7w53eSorgAZ8g_mzPJwZ9D6BQAZmzU4IdHk5wtYFpiHRYb2Eiw"
         },
         "introspect": false
       }
