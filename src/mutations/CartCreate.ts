@@ -1,6 +1,8 @@
 import { gql } from "@apollo/client";
 import { CHECKOUT_PRICING_FRAGMENT } from "@/fragments/checkout";
 
+// TODO: the checkoutCreateInput  needs a channel slug
+
 export const CART_CREATE_MUTATION = gql`
   ${CHECKOUT_PRICING_FRAGMENT}
   mutation CartCreateMutation($input: CheckoutCreateInput!) {

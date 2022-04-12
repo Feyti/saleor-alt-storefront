@@ -69,6 +69,7 @@ import {
   productDetailQuery_product_variants,
 } from "@/queries/types/productDetailQuery";
 import { getLangCode } from "@/utils/utils";
+import { concatAST } from "graphql";
 
 export interface CartModelState {
   checkout: CartCreateMutation_checkoutCreate_checkout | null;
@@ -105,7 +106,7 @@ export interface CartModelType {
     clear: Reducer<CartModelState>;
   };
 }
-
+const CHANNEL_SLUG: string = "default-channel";
 const defaultState: CartModelState = {
   checkout: null,
   guestCartModalOpen: false,
@@ -150,12 +151,14 @@ const CartModel: CartModelType = {
             input: {
               email,
               lines: [],
+              channel: CHANNEL_SLUG,
             },
           };
           const response: { data: CartCreateMutation } = yield call(
             client.mutate,
             {
               mutation: CART_CREATE_MUTATION,
+              // edit the query variables hear
               variables,
             },
           );
