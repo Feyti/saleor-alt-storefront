@@ -8,7 +8,7 @@ const useDark = false;
 // uncomment to use dark theme for users who prefer dark
 // const useDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 export default defineConfig({
-  title: process.env.SITE_NAME || "Alt Storefront",
+  title: process.env.SITE_NAME || "Feyti Store",
   antd: {
     dark: useDark,
   },
