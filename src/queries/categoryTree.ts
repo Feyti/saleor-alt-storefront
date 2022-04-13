@@ -14,41 +14,6 @@ export const CATEGORY_TREE_QUERY = gql`
             edges {
               node {
                 ...BasicCategoryDetails
-                children(first: 100) {
-                  edges {
-                    node {
-                      ...BasicCategoryDetails
-                      children(first: 100) {
-                        edges {
-                          node {
-                            ...BasicCategoryDetails
-                            children(first: 100) {
-                              edges {
-                                node {
-                                  ...BasicCategoryDetails
-                                  children(first: 100) {
-                                    edges {
-                                      node {
-                                        ...BasicCategoryDetails
-                                        children(first: 100) {
-                                          edges {
-                                            node {
-                                              ...BasicCategoryDetails
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
               }
             }
           }

@@ -6,7 +6,7 @@ import { gql } from "@apollo/client";
 export const COLLECTIONS_QUERY = gql`
   ${COLLECTION_BASIC_DETAILS_FRAGMENT}
   query collectionsQuery($lang: LanguageCodeEnum!) {
-    collections(first: 100) {
+    collections(first: 100, channel: "default-channel") {
       edges {
         node {
           ...BasicCollectionDetails

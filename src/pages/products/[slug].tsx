@@ -71,13 +71,14 @@ const ProductDetailPage: ConnectRC<Props> = ({ loading }) => {
 
   const intl = useIntl();
   const dispatch = useDispatch();
-  const { slug } = useParams<{ slug: string }>();
+  const { slug , ID} = useParams<{ slug: string , ID: string}>();
   const { loading: fetching, error, data } = useQuery<
     productDetailQuery,
     productDetailQueryVariables
   >(PRODUCT_DETAIL_PAGE_QUERY, {
     variables: {
-      productSlug: slug as string,
+      productSlug: slug, // the slug tricky
+      productID :ID,
       lang: getLangCode(),
     },
   });
