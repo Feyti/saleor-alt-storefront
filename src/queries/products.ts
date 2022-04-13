@@ -8,9 +8,9 @@ import { gql } from "@apollo/client";
 export const PRODUCTS_QUERY = gql`
   ${PRODUCT_CARD_FRAGMENT}
   query ProductsQuery(
-    # $categoryID: ID
+    $categoryID: ID
     $categoryList: [ID]
-    # $collectionID: ID
+    $collectionID: ID
     $collectionList: [ID]
     $search: String
     $sortBy: ProductOrder
@@ -20,7 +20,8 @@ export const PRODUCTS_QUERY = gql`
     $prodsPerPage: Int!
     $cursor: String
     $lang: LanguageCodeEnum!
-  ) {
+  ) # $channel: String
+  {
     minPrice: products(
       filter: { stockAvailability: IN_STOCK, isPublished: true }
       first: 1
@@ -65,7 +66,23 @@ export const PRODUCTS_QUERY = gql`
         }
       }
     }
-
+    attributes: attributes(
+      filter: {
+        inCategory: $categoryID
+        inCollection: $collectionID
+        filterableInStorefront: true
+        channel: "default-channel"
+      }
+      first: 100
+    ) {
+      edges {
+        node {
+          id
+          name
+          slug
+        }
+      }
+    }
     products(
       filter: {
         search: $search
