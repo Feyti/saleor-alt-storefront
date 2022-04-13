@@ -16,12 +16,12 @@ export const PRODUCTS_QUERY = gql`
     $sortBy: ProductOrder
     $attributes: [AttributeInput]
     $priceGte: Float
+    #$channel:String
     $priceLte: Float
     $prodsPerPage: Int!
     $cursor: String
     $lang: LanguageCodeEnum!
-  ) # $channel: String
-  {
+  ) {
     minPrice: products(
       filter: { stockAvailability: IN_STOCK, isPublished: true }
       first: 1
