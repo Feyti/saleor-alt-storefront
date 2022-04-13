@@ -80,6 +80,14 @@ export const PRODUCTS_QUERY = gql`
           id
           name
           slug
+          choices(first: 5) {
+            edges {
+              node {
+                name
+                slug
+              }
+            }
+          }
         }
       }
     }

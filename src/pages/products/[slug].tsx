@@ -107,10 +107,14 @@ const ProductDetailPage: ConnectRC<Props> = ({ loading }) => {
           const matchIndex = vAttrs.findIndex(a => a.id === attr.attribute.id);
           const entry = vAttrs[matchIndex];
           if (!entry) {
+
             vAttrs.push({
+              // @ts-ignore
               id: attr.attribute.id,
+              // @ts-ignore
               name: attr.attribute.name as string,
               values: [attr.values[0] as AttrValue],
+              // @ts-ignore
               translation: attr.attribute.translation,
               selection: undefined,
             });
