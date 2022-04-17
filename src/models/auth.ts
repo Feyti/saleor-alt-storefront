@@ -225,6 +225,7 @@ const AuthModel: AuthModelType = {
             password,
             redirectUrl:
               window.location.origin + "/account/confirm/emailverify",
+            channel: "default-channel",
           },
         };
         const response: { data: UserRegisterMutation } = yield call(

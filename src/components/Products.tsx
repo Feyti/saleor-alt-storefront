@@ -425,7 +425,7 @@ const Products: React.FC<Props> = ({
                         key={val.id}
                         value={val.slug as string}
                       >
-                        {getAttributeValueName(val)}
+                        {getAttributeValueName(val.choices)}
                       </Select.Option>
                     );
                   })}

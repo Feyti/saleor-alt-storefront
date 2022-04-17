@@ -71,14 +71,15 @@ const ProductDetailPage: ConnectRC<Props> = ({ loading }) => {
 
   const intl = useIntl();
   const dispatch = useDispatch();
-  const { slug , ID} = useParams<{ slug: string , ID: string}>();
+  const { slug , id} = useParams<{ slug: string , id: string}>();
+  console.log(id)
   const { loading: fetching, error, data } = useQuery<
     productDetailQuery,
     productDetailQueryVariables
   >(PRODUCT_DETAIL_PAGE_QUERY, {
     variables: {
-      productSlug: slug, // the slug tricky
-      productID :ID,
+      // productID :id as string,
+      productSlug: slug as string,
       lang: getLangCode(),
     },
   });
@@ -102,7 +103,7 @@ const ProductDetailPage: ConnectRC<Props> = ({ loading }) => {
     product?.variants?.forEach(v => {
       v?.attributes.forEach(attr => {
         // if it's not an empty attribute
-        if (attr.values.length > 0) {
+        if (attr.length > 0) {
           // if already in our array
           const matchIndex = vAttrs.findIndex(a => a.id === attr.attribute.id);
           const entry = vAttrs[matchIndex];
