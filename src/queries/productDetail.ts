@@ -76,7 +76,7 @@ export const PRODUCT_DETAIL_PAGE_QUERY = gql`
     }
     category {
       ...BasicCategoryDetails
-      products(first: 10) {
+      products(first: 10, channel: "default-channel") {
         edges {
           node {
             ...ProductCard

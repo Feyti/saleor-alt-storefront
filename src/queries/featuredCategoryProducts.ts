@@ -14,7 +14,7 @@ export const FEATURED_CATEGORY_PRODUCTS_QUERY = gql`
   ) {
     category(slug: $slug) {
       ...BasicCategoryDetails
-      products(first: $first) {
+      products(first: $first, channel: "default-channel") {
         edges {
           node {
             ...ProductCard
