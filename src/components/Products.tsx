@@ -238,7 +238,7 @@ const Products: React.FC<Props> = ({
 
   // transform categories tree to match ant Tree component data structure
   const mapCatTree = catChildren =>
-    catChildren.edges.map(catEdge => ({
+    catChildren?.edges?.map(catEdge => ({
       title: getCategoryName(catEdge.node),
       key: catEdge.node.id,
       children: mapCatTree(catEdge.node.children),

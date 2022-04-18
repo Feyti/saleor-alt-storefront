@@ -6,7 +6,7 @@ export const HOME_BANNER_SECTION_QUERY = gql`
   ${CATEGORY_BASIC_DETAILS_FRAGMENT}
   ${COLLECTION_BASIC_DETAILS_FRAGMENT}
   query homeBannerSectionQuery($menuName: String!, $lang: LanguageCodeEnum!) {
-    menu(name: $menuName) {
+    menu(name: $menuName, channel: "default-channel") {
       id
       name
       items {

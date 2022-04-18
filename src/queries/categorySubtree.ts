@@ -16,34 +16,6 @@ export const CATEGORY_SUBTREE_QUERY = gql`
               edges {
                 node {
                   ...BasicCategoryDetails
-                  children(first: 100) {
-                    edges {
-                      node {
-                        ...BasicCategoryDetails
-                        children(first: 100) {
-                          edges {
-                            node {
-                              ...BasicCategoryDetails
-                              children(first: 100) {
-                                edges {
-                                  node {
-                                    ...BasicCategoryDetails
-                                    children(first: 100) {
-                                      edges {
-                                        node {
-                                          ...BasicCategoryDetails
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
                 }
               }
             }
