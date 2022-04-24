@@ -9,6 +9,7 @@ export const addressToInput = (
   if (!address) {
     return;
   }
+  // @ts-ignore
   const addr = _.omit(address, [
     "id",
     "__typename",
@@ -87,8 +88,15 @@ export const getLangCode = () =>
 
 export const getProductName = product =>
   product?.translation?.name || product?.name;
+export const getProductDescriptionFromJson = productDescription =>
+  productDescription?.translation?.description.blocks.map(value => {
+    return value.data.text;
+  }) ||
+  productDescription?.description?.blocks.map(value => {
+    return value.data.text;
+  });
 export const getProductDescriptionJson = product =>
-  product?.translation?.descriptionJson || product?.descriptionJson;
+  product?.translation?.seoDescription || product?.seoDescription;
 export const getVariantName = variant =>
   variant?.translation?.name || variant?.name;
 export const getCategoryName = category =>

@@ -125,6 +125,61 @@ export interface ProductsQuery_maxPrice {
   edges: ProductsQuery_maxPrice_edges[];
 }
 
+export interface ProductsQuery_attributes_edges_node_choices_edges_node {
+  __typename: "AttributeValue";
+  /**
+   * Name of a value displayed in the interface.
+   */
+  name: string | null;
+  /**
+   * Internal representation of a value (unique per attribute).
+   */
+  slug: string | null;
+}
+
+export interface ProductsQuery_attributes_edges_node_choices_edges {
+  __typename: "AttributeValueCountableEdge";
+  /**
+   * The item at the end of the edge.
+   */
+  node: ProductsQuery_attributes_edges_node_choices_edges_node;
+}
+
+export interface ProductsQuery_attributes_edges_node_choices {
+  __typename: "AttributeValueCountableConnection";
+  edges: ProductsQuery_attributes_edges_node_choices_edges[];
+}
+
+export interface ProductsQuery_attributes_edges_node {
+  __typename: "Attribute";
+  id: string;
+  /**
+   * Name of an attribute displayed in the interface.
+   */
+  name: string | null;
+  /**
+   * Internal representation of an attribute name.
+   */
+  slug: string | null;
+  /**
+   * List of attribute's values.
+   */
+  choices: ProductsQuery_attributes_edges_node_choices | null;
+}
+
+export interface ProductsQuery_attributes_edges {
+  __typename: "AttributeCountableEdge";
+  /**
+   * The item at the end of the edge.
+   */
+  node: ProductsQuery_attributes_edges_node;
+}
+
+export interface ProductsQuery_attributes {
+  __typename: "AttributeCountableConnection";
+  edges: ProductsQuery_attributes_edges[];
+}
+
 export interface ProductsQuery_products_pageInfo {
   __typename: "PageInfo";
   /**
@@ -172,6 +227,10 @@ export interface ProductsQuery_products_edges_node_collections {
   id: string;
   name: string;
   slug: string;
+  /**
+   * Channel given to retrieve this collection. Also used by federation gateway to resolve this object in a federated query.
+   */
+  channel: string | null;
   /**
    * Returns translated collection fields for the given language code.
    */
@@ -409,13 +468,19 @@ export interface ProductsQuery {
    */
   maxPrice: ProductsQuery_maxPrice | null;
   /**
+   * List of the shop's attributes.
+   */
+  attributes: ProductsQuery_attributes | null;
+  /**
    * List of the shop's products.
    */
   products: ProductsQuery_products | null;
 }
 
 export interface ProductsQueryVariables {
+  categoryID?: string | null;
   categoryList?: (string | null)[] | null;
+  collectionID?: string | null;
   collectionList?: (string | null)[] | null;
   search?: string | null;
   sortBy?: ProductOrder | null;

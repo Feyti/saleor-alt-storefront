@@ -12,6 +12,8 @@ const RichTextContent: React.FC<IProps> = ({ contentJson, lines }) => {
   if (!contentJson) {
     return null;
   }
+  // @ts-ignore
+  console.log(contentJson);
   return (
     <>
       {lines ? (

@@ -21,6 +21,10 @@ export interface collectionsQuery_collections_edges_node {
   name: string;
   slug: string;
   /**
+   * Channel given to retrieve this collection. Also used by federation gateway to resolve this object in a federated query.
+   */
+  channel: string | null;
+  /**
    * Returns translated collection fields for the given language code.
    */
   translation: collectionsQuery_collections_edges_node_translation | null;

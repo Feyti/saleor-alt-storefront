@@ -49,6 +49,10 @@ export interface productDetailQuery_product_collections {
   name: string;
   slug: string;
   /**
+   * Channel given to retrieve this collection. Also used by federation gateway to resolve this object in a federated query.
+   */
+  channel: string | null;
+  /**
    * Returns translated collection fields for the given language code.
    */
   translation: productDetailQuery_product_collections_translation | null;
@@ -464,6 +468,10 @@ export interface productDetailQuery_category_products_edges_node_collections {
   name: string;
   slug: string;
   /**
+   * Channel given to retrieve this collection. Also used by federation gateway to resolve this object in a federated query.
+   */
+  channel: string | null;
+  /**
    * Returns translated collection fields for the given language code.
    */
   translation: productDetailQuery_category_products_edges_node_collections_translation | null;
@@ -710,7 +718,6 @@ export interface productDetailQuery {
 }
 
 export interface productDetailQueryVariables {
-  productID?: string | null;
   productSlug?: string | null;
   lang: LanguageCodeEnum;
 }

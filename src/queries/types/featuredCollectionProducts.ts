@@ -55,6 +55,10 @@ export interface featuredCollectionProducts_collection_products_edges_node_colle
   name: string;
   slug: string;
   /**
+   * Channel given to retrieve this collection. Also used by federation gateway to resolve this object in a federated query.
+   */
+  channel: string | null;
+  /**
    * Returns translated collection fields for the given language code.
    */
   translation: featuredCollectionProducts_collection_products_edges_node_collections_translation | null;
@@ -278,6 +282,10 @@ export interface featuredCollectionProducts_collection {
   id: string;
   name: string;
   slug: string;
+  /**
+   * Channel given to retrieve this collection. Also used by federation gateway to resolve this object in a federated query.
+   */
+  channel: string | null;
   /**
    * Returns translated collection fields for the given language code.
    */

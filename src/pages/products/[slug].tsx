@@ -27,6 +27,7 @@ import {
   getProductDescriptionJson,
   getProductName,
   getScreenSize,
+  getProductDescriptionFromJson,
 } from "@/utils/utils";
 import ProductCard from "@/components/ProductCard";
 import { ListGridType } from "antd/lib/list";
@@ -71,14 +72,12 @@ const ProductDetailPage: ConnectRC<Props> = ({ loading }) => {
 
   const intl = useIntl();
   const dispatch = useDispatch();
-  const { slug , id} = useParams<{ slug: string , id: string}>();
-  console.log(id)
-  const { loading: fetching, error, data } = useQuery<
+  const { slug } = useParams<{ slug: string }>();
+  const { loading: fetching, data} = useQuery<
     productDetailQuery,
     productDetailQueryVariables
   >(PRODUCT_DETAIL_PAGE_QUERY, {
     variables: {
-      // productID :id as string,
       productSlug: slug as string,
       lang: getLangCode(),
     },
@@ -482,7 +481,7 @@ const ProductDetailPage: ConnectRC<Props> = ({ loading }) => {
                   title={false}
                 >
                   <RichTextContent
-                    contentJson={getProductDescriptionJson(product)}
+                    contentJson={getProductDescriptionFromJson(product)}
                     lines={10}
                   />
                 </Skeleton>
