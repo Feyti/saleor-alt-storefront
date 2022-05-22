@@ -9,12 +9,12 @@ export const PRODUCTS_QUERY = gql`
   ${PRODUCT_CARD_FRAGMENT}
   query ProductsQuery(
     $categoryID: ID
-    $categoryList: [ID]
+    $categoryList: [ID!]
     $collectionID: ID
-    $collectionList: [ID]
+    $collectionList: [ID!]
     $search: String
     $sortBy: ProductOrder
-    $attributes: [AttributeInput]
+    $attributes: [AttributeInput!]
     $priceGte: Float
     #$channel:String
     $priceLte: Float

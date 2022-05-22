@@ -479,12 +479,12 @@ export interface ProductsQuery {
 
 export interface ProductsQueryVariables {
   categoryID?: string | null;
-  categoryList?: (string | null)[] | null;
+  categoryList?: string[] | null;
   collectionID?: string | null;
-  collectionList?: (string | null)[] | null;
+  collectionList?: string[] | null;
   search?: string | null;
   sortBy?: ProductOrder | null;
-  attributes?: (AttributeInput | null)[] | null;
+  attributes?: AttributeInput[] | null;
   priceGte?: number | null;
   priceLte?: number | null;
   prodsPerPage: number;

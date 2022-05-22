@@ -90,10 +90,10 @@ export const getProductName = product =>
   product?.translation?.name || product?.name;
 export const getProductDescriptionFromJson = productDescription =>
   productDescription?.translation?.description.blocks.map(value => {
-    return value.data.text;
+    console.log(value.data.text);
   }) ||
   productDescription?.description?.blocks.map(value => {
-    return value.data.text;
+    console.log(value.data.text);
   });
 export const getProductDescriptionJson = product =>
   product?.translation?.seoDescription || product?.seoDescription;

@@ -8,11 +8,11 @@ export const PRODUCT_DETAIL_PAGE_QUERY = gql`
   ${PRODUCT_CARD_FRAGMENT}
   ${CATEGORY_BASIC_DETAILS_FRAGMENT}
   query productDetailQuery(
-    # $productID: ID
-    $productSlug: String
+    # $id: ID
+    $slug: String
     $lang: LanguageCodeEnum!
   ) {
-    product(slug: $productSlug, channel: "default-channel") {
+    product(slug: $slug, channel: "default-channel") {
       ...ProductCard
       descriptionJson
       seoTitle

@@ -718,6 +718,6 @@ export interface productDetailQuery {
 }
 
 export interface productDetailQueryVariables {
-  productSlug?: string | null;
+  slug?: string | null;
   lang: LanguageCodeEnum;
 }

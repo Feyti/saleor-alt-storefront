@@ -328,5 +328,5 @@ export interface CartLinesUpdateMutation {
 
 export interface CartLinesUpdateMutationVariables {
   checkoutId: string;
-  checkoutLines: (CheckoutLineInput | null)[];
+  checkoutLines: CheckoutLineInput[];
 }

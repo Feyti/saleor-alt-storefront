@@ -5,7 +5,7 @@ export const CART_LINES_ADD_MUTATION = gql`
   ${CHECKOUT_DETAILS_FRAGMENT}
   mutation CartLinesAddMutation(
     $checkoutId: ID!
-    $checkoutLines: [CheckoutLineInput]!
+    $checkoutLines: [CheckoutLineInput!]!
   ) {
     checkoutLinesAdd(checkoutId: $checkoutId, lines: $checkoutLines) {
       checkoutErrors {

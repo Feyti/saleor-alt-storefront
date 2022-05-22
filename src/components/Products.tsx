@@ -13,7 +13,7 @@ import {
   Input,
   Skeleton,
 } from "antd";
-import { useIntl, useLocation, history } from "umi";
+import { useIntl, history } from "umi";
 import InfiniteScroll from "react-infinite-scroller";
 
 import VSpacing from "@/components/VSpacing";
@@ -26,6 +26,7 @@ import {
   ProductsQuery,
   ProductsQueryVariables,
 } from "@/queries/types/ProductsQuery";
+import { useLocation } from "react-router-dom";
 import { PRODUCTS_QUERY } from "@/queries/products";
 import { ProductOrderField, OrderDirection, ProductOrder } from "@/globalTypes";
 import SkeletonDiv from "./SkeletonDiv";
@@ -85,6 +86,7 @@ const Products: React.FC<Props> = ({
       direction: OrderDirection.DESC,
     },
   };
+  // @ts-ignore
   const { pathname, query } = useLocation();
   const {
     q: search,
@@ -380,6 +382,8 @@ const Products: React.FC<Props> = ({
         <Collapse.Panel id="attrs-panel" header="Attributes" key="attributes">
           {data?.attributes?.edges.map(attrEdge => {
             const attr = attrEdge.node;
+            // console.log(attr)
+
             return (
               <div key={attr.id}>
                 <label className="attrs-labels">{getAttributeName(attr)}</label>
@@ -390,17 +394,17 @@ const Products: React.FC<Props> = ({
                   className="w-full"
                   mode="multiple"
                   showArrow
-                  onChange={(values, m) => {
+                  onChange={(choices, m) => {
                     const newAttrs = [...attributes];
                     const entry = {
                       slug: attr.slug as string,
-                      values: values as string[],
+                      values: choices.edges as string[],
                     };
                     const index = newAttrs.findIndex(a => a.slug === attr.slug);
                     if (index === -1) {
                       newAttrs.push(entry);
                     } else {
-                      if (values.length > 0) {
+                      if (choices.length > 0) {
                         newAttrs[index] = entry;
                       } else {
                         _.remove(newAttrs, a => a.slug === attr.slug);
@@ -415,17 +419,18 @@ const Products: React.FC<Props> = ({
                     });
                   }}
                 >
-                  {attr.values?.map(val => {
+                  // @ts-ignore
+                  {attr.choices.edges?.map(val => {
                     if (!val) {
                       return null;
                     }
                     return (
                       <Select.Option
-                        id={`attrs-${attr.slug}-${val.slug}`}
-                        key={val.id}
-                        value={val.slug as string}
+                        id={`attrs-${attr.slug}-${val.node.slug}`}
+                        key={val.node.slug}
+                        value={val.node.slug as string}
                       >
-                        {getAttributeValueName(val.choices)}
+                        {getAttributeValueName(val.node)}
                       </Select.Option>
                     );
                   })}

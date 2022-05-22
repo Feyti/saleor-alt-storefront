@@ -193,7 +193,7 @@ const AddressForm: ConnectRC<Props> = ({
             validateFirst
             rules={[
               {
-                required: true,
+                required: false,
                 whitespace: true,
                 message: intl.formatMessage({
                   id: "form.address.phone.required",

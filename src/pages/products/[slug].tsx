@@ -17,7 +17,7 @@ import { Helmet } from "react-helmet";
 import RichTextContent from "@/components/RichTextContent";
 import AspectRatio from "@/components/AspectRatio";
 import VSpacing from "@/components/VSpacing";
-import { useIntl, useParams, useDispatch, connect, ConnectRC } from "umi";
+import { useIntl, useParams, useDispatch, connect, ConnectRC,useHistory } from "umi";
 import {
   formatPrice,
   formatTitle,
@@ -72,13 +72,14 @@ const ProductDetailPage: ConnectRC<Props> = ({ loading }) => {
 
   const intl = useIntl();
   const dispatch = useDispatch();
-  const { slug } = useParams<{ slug: string }>();
+  const { slug  } = useParams<{ slug: string }>();
+  console.log(slug);
   const { loading: fetching, data} = useQuery<
     productDetailQuery,
     productDetailQueryVariables
   >(PRODUCT_DETAIL_PAGE_QUERY, {
     variables: {
-      productSlug: slug as string,
+      slug: slug as string,
       lang: getLangCode(),
     },
   });
@@ -580,6 +581,7 @@ const ProductDetailPage: ConnectRC<Props> = ({ loading }) => {
             dataSource={fetching ? (_.range(4) as any[]) : suggestions}
             grid={productGrid}
             renderItem={(edge, i) => {
+              // @ts-ignore
               const productItem = edge.node;
               return (
                 <List.Item
