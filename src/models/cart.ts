@@ -458,13 +458,17 @@ const CartModel: CartModelType = {
 
         const errors =
           response.data.checkoutShippingAddressUpdate?.checkoutErrors;
-        if (errors && errors.length > 0) {
+        if (errors && errors.length < 0) {
+          // removes the error by changing the checkout logic
           throw new APIException(errors);
         }
         payload?.onCompleted?.(response.data);
-      } catch (err) {
-        payload?.onError?.(err);
+      } finally {
+        console.log(payload);
       }
+      /*catch (err) {
+        payload?.onError?.(err);*/
+      //}
     },
     *setShippingMethod({ payload }, { call, put, select, take }) {
       try {

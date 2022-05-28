@@ -7,8 +7,8 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     env:
-      API_URI: https://mhbvufznnx.us-east-1.awsapprunner.com/graphql/
-      API_ORIGIN: https://mhbvufznnx.us-east-1.awsapprunner.com
+      API_URI: https://z9defzbmdk.eu-west-1.awsapprunner.com/graphql/
+      API_ORIGIN: https://z9defzbmdk.eu-west-1.awsapprunner.com
       SITE_NAME: Feyit Store
       SITE_DESCRIPTION: Feyti Drug Shop
       # APP_MOUNT_URI: /store/
